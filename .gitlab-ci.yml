@@ -1,0 +1,303 @@
+image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11-0.0.2
+
+variables:
+  PROJECT_NAME: 'wholesale-wireless-aem'
+  MAVEN_CLI_OPTS: "-s .m2/settings.xml --batch-mode"
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  SONAR_TAG: 'Maven'
+  GIT_CLONE_PATH: '$CI_BUILDS_DIR/$CI_PROJECT_PATH'
+
+cache:
+  paths:
+    - .m2/repository/
+    - target/
+
+stages:
+  - Setup
+  - Maven-Checkstyle
+  - "Coverage - Dev"
+  - "Coverage - QA/Master"
+  - sonar-scan
+  - "Deploy to S3 - Dev"
+  - "Aggregator Versioning - Develop"
+  - "Patch Increase - Develop"
+  - "Deploy to S3 - QA"
+  - "Aggregator Versioning - QA"
+  - "Minor Increase - Develop"
+  - "Deploy to S3 - Master"
+  - "Hotfix - Patch Increase - Master"
+  - "Hotfix - Deploy to S3 - Master"
+
+
+Setup:
+  stage: Setup
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  artifacts:
+    paths:
+      - shared-vars.sh
+  script:
+    - POM_VERSION_LOCAL=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout | sed 's/-.*//')
+    - echo "export POM_VERSION_LOCAL=$POM_VERSION_LOCAL" >> shared-vars.sh
+    - echo "export EXTENDED_POM_VERSION=$POM_VERSION_LOCAL-$CI_PIPELINE_ID" >> shared-vars.sh
+  tags:
+    - sling
+
+
+Maven-Checkstyle:
+  stage: Maven-Checkstyle
+  script:
+    - mvn $MAVEN_CLI_OPTS compile checkstyle:check
+  tags:
+    - sling
+    #- wireless-grouprunner-cicd
+  only:
+    - branches
+  except:
+    - develop
+    - qa
+    - master
+    - /^(fix)\/(([US]{2}\d{6}))((-)(([a-z]+)))((-)(([a-z]+)))((-)(([a-z]+$)))$/
+
+
+CoverageDev:
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  stage: "Coverage - Dev"
+  before_script:
+    - source shared-vars.sh
+  script:
+    - mvn versions:set -DnewVersion=$EXTENDED_POM_VERSION
+    - mvn $MAVEN_CLI_OPTS clean install
+    - ls -R
+    - ls core/target/site/jacoco/
+    - mkdir sonar_reports
+    - cp core/target/site/jacoco/jacoco.xml sonar_reports/CoverageReport.xml
+    - ls -R
+    - git checkout HEAD -- **/pom.xml
+  tags:
+    #- wireless-grouprunner-cicd
+    #- wireless-grouprunner-cicd-13
+    - sling
+  artifacts:
+    when: always
+    paths:
+      - ./sonar_reports/**/*
+      - ./core/target/classes/**/*
+      - ./all/target/*.zip
+      - ./ui.frontend.general/coverage/*
+  only:
+    - branches
+  except:
+    - qa
+    - master
+    - /^(fix)\/(([US]{2}\d{6}))((-)(([a-z]+)))((-)(([a-z]+)))((-)(([a-z]+$)))$/
+
+
+Coverage:
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  stage: "Coverage - QA/Master"
+  before_script:
+    - source shared-vars.sh
+  script:
+    - mvn versions:set -DnewVersion=$POM_VERSION_LOCAL
+    - mvn $MAVEN_CLI_OPTS clean install
+    - ls -R
+    - ls core/target/site/jacoco/
+    - mkdir sonar_reports
+    - cp core/target/site/jacoco/jacoco.xml sonar_reports/CoverageReport.xml
+    - ls -R
+    - git checkout HEAD -- **/pom.xml
+  tags:
+    #- wireless-grouprunner-cicd
+    #- wireless-grouprunner-cicd-13
+    - sling
+  artifacts:
+    when: always
+    paths:
+      - ./sonar_reports/**/*
+      - ./core/target/classes/**/*
+      - ./all/target/*.zip
+  only:
+    - qa
+    - master
+    - /^(fix)\/(([US]{2}\d{6}))((-)(([a-z]+)))((-)(([a-z]+)))((-)(([a-z]+$)))$/
+
+
+include:
+  -  https://gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/poc-work-aem/sonarscripts/-/raw/master/sonar-scan.yml
+  #-  https://gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/centralized-deployment-automation/deployment-scripts/ci-scripts/-/raw/master/sonar-scan.yml
+
+
+UploadArtifactDevelop:
+  stage: "Deploy to S3 - Dev"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - python3 --version
+    - pwd
+    - ls -a ./all/target
+    - cd scripts
+    - pip install boto3 -i https://artifactory.global.dish.com/artifactory/api/pypi/local-pypi/simple
+    - python3 ./copy_fls_s3.py --awsrole Automation-GitlabRunner-S3access --bucket dish-wholesale --path develop/com/dish/wholesale/wholesale.all/$EXTENDED_POM_VERSION --awsid 860433086439 --region us-west-2 --file ../all/target/wholesale.all-$EXTENDED_POM_VERSION.zip
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - develop
+
+    
+AggregatorVersioningDevelop:
+  stage: "Aggregator Versioning - Develop"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - "curl -X POST 
+            -F token=$AGGREGATOR_TOKEN 
+            -F ref=develop 
+            -F variables[WholesaleVersion]=$EXTENDED_POM_VERSION
+            https://gitlab.global.dish.com/api/v4/projects/19259/trigger/pipeline"
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - develop
+
+
+PatchIncrease:
+  stage: "Patch Increase - Develop"
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  script:
+    - mkdir develop
+    - cd develop
+    - ls -a
+    - git clone --branch develop https://$PIPELINE_MANAGER_USERNAME:$PIPELINE_MANAGER_PASSWORD@gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/multi-tenant-aem-hosting/wholesale-wireless-portal.git .
+    - git remote set-url origin https://$PIPELINE_MANAGER_USERNAME:$PIPELINE_MANAGER_PASSWORD@gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/multi-tenant-aem-hosting/wholesale-wireless-portal.git
+    - mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}\-SNAPSHOT
+    - git -c user.name='Pipeline Manager' -c user.email='wholesale_wireless_aem_support@dish.com' commit -a -m "Update Wholesale-All Patch Version"
+    - git push --force origin HEAD:develop
+    - cd ..
+    - rm -rf develop
+    - ls -a
+  tags:
+    - sling
+  only:
+    - qa
+
+
+UploadArtifactQA:
+  stage: "Deploy to S3 - QA"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - python3 --version
+    - pwd
+    - ls -a ./all/target
+    - cd scripts
+    - pip install boto3 -i https://artifactory.global.dish.com/artifactory/api/pypi/local-pypi/simple
+    - python3 ./copy_fls_s3.py --awsrole Automation-GitlabRunner-S3access --bucket dish-wholesale --path qa/com/dish/wholesale/wholesale.all/$POM_VERSION_LOCAL --awsid 860433086439 --region us-west-2 --file ../all/target/wholesale.all-$POM_VERSION_LOCAL.zip
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - qa
+
+
+AggregatorVersioningQA:
+  stage: "Aggregator Versioning - QA"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - "curl -X POST 
+            -F token=$AGGREGATOR_TOKEN 
+            -F ref=qa 
+            -F variables[WholesaleVersion]=$POM_VERSION_LOCAL
+            https://gitlab.global.dish.com/api/v4/projects/19259/trigger/pipeline"
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - qa
+
+
+MinorIncrease:
+  stage: "Minor Increase - Develop"
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  script:
+    - mkdir develop
+    - cd develop
+    - ls -a
+    - git clone --branch develop https://$PIPELINE_MANAGER_USERNAME:$PIPELINE_MANAGER_PASSWORD@gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/multi-tenant-aem-hosting/wholesale-wireless-portal.git .
+    - git remote set-url origin https://$PIPELINE_MANAGER_USERNAME:$PIPELINE_MANAGER_PASSWORD@gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/multi-tenant-aem-hosting/wholesale-wireless-portal.git
+    - mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.nextMinorVersion}.0\-SNAPSHOT
+    - git -c user.name='Pipeline Manager' -c user.email='wholesale_wireless_aem_support@dish.com' commit -a -m "Update Wholesale-All Minor Version"
+    - git push --force origin HEAD:develop
+    - cd ..
+    - rm -rf develop
+    - ls -a
+  tags:
+    - sling
+  only:
+    - master
+
+
+UploadArtifactMaster:
+  stage: "Deploy to S3 - Master"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - python3 --version
+    - pwd
+    - ls -a ./all/target
+    - cd scripts
+    - pip install boto3 -i https://artifactory.global.dish.com/artifactory/api/pypi/local-pypi/simple
+    - python3 ./copy_fls_s3.py --awsrole Automation-GitlabRunner-S3access --bucket dish-wholesale --path master/com/dish/wholesale/wholesale.all/$POM_VERSION_LOCAL --awsid 860433086439 --region us-west-2 --file ../all/target/wholesale.all-$POM_VERSION_LOCAL.zip
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - master
+
+
+HotfixPatchIncrease:
+  stage: "Hotfix - Patch Increase - Master"
+  image: artifactory.global.dish.com/docker-local-dev/maven:3.6.3-jdk-11
+  script:
+    - cat /proc/version
+    - echo $WholesaleVersion
+    - git remote set-url origin https://$PIPELINE_MANAGER_USERNAME:$PIPELINE_MANAGER_PASSWORD@gitlab.global.dish.com/it-wireless-commercial-application-engineering-repos/multi-tenant-aem-hosting/wholesale-wireless-portal.git
+    - ls -a
+    - git branch -a
+    - git checkout remotes/origin/$CI_COMMIT_BRANCH
+    - mvn build-helper:parse-version versions:set -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}\-SNAPSHOT
+    - git -c user.name='Pipeline Manager' -c user.email='wholesale_wireless_aem_support@dish.com' commit -a -m "Update Wholesale-All Patch Version"
+    - git push origin HEAD:$CI_COMMIT_BRANCH
+  tags:
+    - sling
+  only:
+    - /^(fix)\/(([US]{2}\d{6}))((-)(([a-z]+)))((-)(([a-z]+)))((-)(([a-z]+$)))$/
+  except:
+    variables:
+      - $GITLAB_USER_NAME == "VersioningToken"
+
+
+
+HotfixUploadArtifact:
+  stage: "Hotfix - Deploy to S3 - Master"
+  image: wireless-docker-dev.global.dish.com/base/helm-plus-extras:1.1.11
+  before_script:
+    - source shared-vars.sh
+  script:
+    - python3 --version
+    - pwd
+    - ls -a ./all/target
+    - cd scripts
+    - pip install boto3 -i https://artifactory.global.dish.com/artifactory/api/pypi/local-pypi/simple
+    - python3 ./copy_fls_s3.py --awsrole Automation-GitlabRunner-S3access --bucket dish-wholesale --path master/com/dish/wholesale/wholesale.all/$POM_VERSION_LOCAL --awsid 860433086439 --region us-west-2 --file ../all/target/wholesale.all-$POM_VERSION_LOCAL.zip
+  tags:
+    - wireless-grouprunner-cicd
+  only:
+    - master
+    - /^(fix)\/(([US]{2}\d{6}))((-)(([a-z]+)))((-)(([a-z]+)))((-)(([a-z]+$)))$/
+  except:
+    variables:
+      - $GITLAB_USER_NAME != "VersioningToken"
+
