@@ -1,0 +1,6 @@
+{
+  "externalizer.domains" : ["local http://localhost:4502","author https://author-dishwholesale-dev1.adobecqms.net","publish https://dev.dishwireless.com"],
+  "externalizer.contextpath":"",
+  "externalizer.host":"",
+  "externalizer.encodedpath":"false"
+}

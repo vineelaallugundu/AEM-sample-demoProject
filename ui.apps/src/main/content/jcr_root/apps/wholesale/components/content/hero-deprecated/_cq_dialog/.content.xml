@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Hero Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <tab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Hero"
+                sling:resourceType="granite/ui/components/foundation/section">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    fieldLabel="Banner Details"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <image
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/pathbrowser"
+                                fieldLabel="Background Image"
+                                name="./image"
+                                rootPath="/content/dam"/>
+                            <title
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldLabel="Hero Page Title"
+                                name="./heroTitle"/>
+                            <subHeader
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Provide Hero header"
+                                fieldLabel="Hero Header"
+                                name="./heroHeader"/>
+                            <alt
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Textual alternative for image"
+                                fieldLabel="Alternative Text"
+                                name="./alt"
+                                required="{Boolean}true"
+                                wrapperClass="cmp-image--editor-alt"/>
+                            <height
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/numberfield"
+                                fieldDescription="Height of background  image"
+                                fieldLabel="Height of background image"
+                                name="./height"
+                                required="{Boolean}true"/>
+                            <optionTypes
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Unit of Background Image  height"
+                                fieldLabel="Background image height Unit"
+                                name="./heightUnit">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <pixel
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Pixel"
+                                        value="px"/>
+                                    <percentage
+                                        jcr:primaryType="nt:unstructured"
+                                        text="Percentage"
+                                        value="%"/>
+                                    <vh
+                                        jcr:primaryType="nt:unstructured"
+                                        text="VH"
+                                        value="vh"/>
+                                </items>
+                            </optionTypes>
+                            <toggleLogo
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                fieldDescription="Toggle Display for Logo"
+                                fieldLabel="Toggle Logo"
+                                text="Logo Hide"
+                                value="true"
+                                name="./toggleLogo"/>
+                            <toggleLogoCheckboxType
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./toggleLogo@TypeHint"
+                                value="Boolean"/>
+                            <fontColor
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                fieldDescription="Hex value for changing color of hero text"
+                                fieldLabel="Font Color"
+                                name="./fontColor"
+                                required="{Boolean}true"/>
+                        </items>
+                    </columns>
+                </items>
+            </tab>
+        </items>
+    </content>
+</jcr:root>

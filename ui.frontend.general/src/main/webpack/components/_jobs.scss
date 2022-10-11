@@ -1,0 +1,101 @@
+.jobs-form {
+	>div {
+		margin: auto;
+		width: 100%;
+	}
+}
+.jobs-container {
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+	box-shadow: -2px 2px 8px #bcbcbc;
+}
+.items-list {
+	border-bottom: 2px solid #bcbcbc;
+	padding: 16px 32px;
+	position: relative;
+	&:nth-last-child(1) {
+		border-bottom: none;
+	}
+}
+.item-title {
+	font-weight: 600 !important;
+	font-size: 18px;
+	padding-right: 80px;
+}
+.location {
+	font-size: 14px;
+	margin-top: -3px;
+}
+.btn-dark:active {
+	transform: scale(.95);
+}
+.btn:focus, .btn-dark:focus {
+	box-shadow: none;
+}
+.btn-dark:hover,.btn-dark:active{
+	background-color: #434343;
+}
+.btn-dark:not(:disabled):not(.disabled):active:focus{
+	box-shadow: none;
+}
+.buttons {
+	a {
+		text-decoration: none;
+		color: $color-water-day;
+		position: relative;
+		top: 5px;
+		cursor: pointer;
+		z-index: 1;
+	}
+}
+.buttons a:hover {
+	text-decoration: underline;
+	color: darken($color-water-day, 5%);
+}
+
+.buttons a:active {
+	text-decoration: underline;
+	color: darken($color-water-day, 15%);
+}
+
+#prev {
+	float: left;
+	padding: 32px;
+	font-weight: $font-weight-medium;
+}
+
+#next {
+	float: right;
+	font-weight: $font-weight-extrabold;
+	padding: 32px;
+}
+
+#results {
+	position: relative;
+}
+.disabled {
+	pointer-events: none;
+	color: #bcbcbc !important;
+}
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background: rgba( 255, 255, 255, .8 ) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+}
+body.loading {
+	.modal {
+		overflow: hidden;
+		display: block;
+	}
+}
+@media (max-width: 992px) {
+	.item-title {
+		width: 300px;
+		padding-top: 1px;
+	}
+}

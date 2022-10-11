@@ -1,0 +1,13 @@
+{
+	"login": {
+	  "jcr:primaryType": "nt:unstructured",
+	  "jcr:createdBy": "admin",
+	  "jcr:lastModifiedBy": "admin",
+	  "jcr:created": "Thu Aug 12 2021 00:26:10 GMT+0530",
+	  "username": "Username Field",
+	  "buttontext": "Button Text",
+	  "jcr:lastModified": "Thu Aug 12 2021 00:26:32 GMT+0530",
+	  "password": "Password Field",
+	  "sling:resourceType": "wholesale/components/login"
+	}
+}

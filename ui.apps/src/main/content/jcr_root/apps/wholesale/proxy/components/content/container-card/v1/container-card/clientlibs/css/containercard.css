@@ -1,0 +1,63 @@
+.container-card {
+    position: relative;
+}
+
+.container-card > .card {
+    box-sizing: border-box;
+    border-radius: .9375rem;
+    border: 1px solid transparent;
+    padding: 1rem;
+    margin: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-repeat: no-repeat;
+    position: inherit;
+}
+
+.horizontal-none, .vertical-none {
+    z-index: 100;
+    position: relative;
+}
+
+.container-card > .card .content-wrapper {
+    z-index: 100;
+}
+
+.horizontal-left > .content-wrapper, .horizontal-center > .content-wrapper, .horizontal-right > .content-wrapper {
+    position: absolute;
+}
+
+.horizontal-left > .content-wrapper {
+    left: 0px;
+}
+
+.horizontal-center > .content-wrapper {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.horizontal-right > .content-wrapper {
+    right: 0px;
+}
+
+.vertical-top > div, .vertical-center > div, .vertical-bottom > div{
+    position: absolute;
+}
+
+.vertical-top > .content-wrapper {
+    top:0px
+}
+
+.vertical-center > .content-wrapper {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.vertical-bottom > .content-wrapper {
+    bottom: 0px;
+}
+
+.vertical-center.horizontal-center > .content-wrapper {
+    top: 50%;
+    transform: translate(-50%,-50%);
+}

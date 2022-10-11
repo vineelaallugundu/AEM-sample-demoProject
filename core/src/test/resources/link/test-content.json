@@ -1,0 +1,13 @@
+{
+	
+		"link": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "linkAlignment":"center",
+			  "linkLabel": "label Text",
+			  "linkSrc": "/content/wholesale",
+			  "linkTextSize": "t-24",
+			  "colorType": "#ffffff",
+			  "hideArrowIcon": "true",
+			  "sling:resourceType": "wholesale/components/content/link"
+		}
+	}

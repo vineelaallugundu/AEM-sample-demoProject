@@ -1,0 +1,8 @@
+{
+	
+	"feedback": {
+		"feedbackText": "Hangout",
+		"feedbackButtonLabel": "2",
+		"sling:resourceType": "wholesale/components/content/feedback"
+	}
+}

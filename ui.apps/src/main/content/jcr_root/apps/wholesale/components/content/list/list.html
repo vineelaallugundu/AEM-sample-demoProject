@@ -1,0 +1,15 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 data-sly-use.model="com.dish.wholesale.core.models.ListModel">
+	<div class="list-form">
+		<div class="list-container">
+			<ul data-sly-list.listItems="${model.data}" data-sly-unwrap>
+				<div class="items-list">
+					<li class="item-title">${listItems.listTitle}</li>
+					<li class="subtext">${listItems.listSubText}</li>
+					<a href="${listItems.listButtonLink}" target="_blank" class="btn btn-dark apply" role="button"> ${listItems.listButtonText} </a>
+				</div>
+			</ul>
+		</div>
+	</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = !resource.hasChildren}"></sly>
+</sly>

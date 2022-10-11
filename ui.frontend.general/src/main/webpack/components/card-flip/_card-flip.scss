@@ -1,0 +1,39 @@
+.flip-card {
+    position: relative;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    &__front {
+        transform: rotateY(0);
+    }
+
+    &__back {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card__front, .flip-card__back {
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        backface-visibility: hidden;
+        transition: all 4s ease;
+    }
+
+    @media (min-width: 992px) { 
+        &:hover .flip-card__front {
+            transform: rotateY(-180deg);
+        }
+
+        &:hover .flip-card__back {
+            transform: rotateY(0);
+        }
+    }
+    
+    &.clicked .flip-card__front {
+        transform: rotateY(-180deg);
+    }
+
+    &.clicked .flip-card__back {
+        transform: rotateY(0);
+    }
+}

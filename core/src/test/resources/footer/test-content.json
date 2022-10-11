@@ -1,0 +1,65 @@
+{
+	"footer": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/footer",
+	   "textIsRich":[
+	      "true",
+	      "true",
+	      "true"
+	   ],
+	   "footerItems":{
+	      "jcr:primaryType":"nt:unstructured",
+	      "item0":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "pageLabel":"Test",
+	         "pageUrl":"Test"
+	      },
+	      "item1":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "pageLabel":"bbb",
+	         "pageUrl":"B"
+	      },
+	      "item2":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "pageLabel":"ccc",
+	         "pageUrl":"C"
+	      }
+	   }
+	},
+	"footer-empty": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/footer",
+	   "textIsRich":[
+	      "true",
+	      "true",
+	      "true"
+	   ]
+	},
+	"footer-items-empty": {
+		"jcr:primaryType":"nt:unstructured",
+		"sling:resourceType":"wholesale/components/content/footer",
+		"textIsRich":[
+			"true",
+			"true",
+			"true"
+		],
+		"footerItems":{
+			"jcr:primaryType":"nt:unstructured",
+			"item0":{
+				"jcr:primaryType":"nt:unstructured"
+			}
+		}
+	},
+	"footer-items-null": {
+		"jcr:primaryType":"nt:unstructured",
+		"sling:resourceType":"wholesale/components/content/footer",
+		"textIsRich":[
+			"true",
+			"true",
+			"true"
+		],
+		"footerItems":{
+			"jcr:primaryType":"nt:unstructured"
+		}
+	}
+}

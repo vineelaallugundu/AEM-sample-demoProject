@@ -1,0 +1,8 @@
+{
+		"divider": {
+		      "jcr:primaryType": "nt:unstructured",
+			  "thickness": "2px",
+			  "margin": "10px",
+			  "sling:resourceType": "wholesale/components/content/divider"
+		}
+	}

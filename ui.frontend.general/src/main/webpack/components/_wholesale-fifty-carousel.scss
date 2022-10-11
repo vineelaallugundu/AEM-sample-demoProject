@@ -1,0 +1,235 @@
+.fifty-carousel {
+	overflow: hidden;
+}
+.cmp-fifty_one-column {
+	.fifty-image-view {
+		width: 100%;
+	}
+}
+.cmp-wholesafifty_full-width {
+	.fifty-image-view {
+		width: 100%;
+	}
+}
+.fifty-image-view {
+	width: 100%;
+}
+.fifty-logo-view {
+	margin: auto 0;
+	position: absolute;
+	z-index: 150;
+	width: 64px;
+	height: 64px;
+	bottom: -32px;
+	right: 32px;
+	border-radius: 32px;
+	>img {
+		width: 100%;
+	}
+}
+.aem {
+	.light-theme-marshmallow {
+		.fifty-logo-view {
+			background-color: var(--color-marshmallow);
+			color: var(--midnight);
+		}
+	}
+	.light-theme-smoke {
+		.fifty-logo-view {
+			background-color: var(--color-smoke);
+			color: var(--coal);
+		}
+	}
+	.dark-theme-midnight {
+		.fifty-logo-view {
+			background-color: var(--midnight);
+			color: var(--color-marshmallow);
+		}
+	}
+	.dark-theme-coal {
+		.fifty-logo-view {
+			background-color: var(--coal);
+			color: var(--color-smoke);
+		}
+	}
+	.wholesale-fifty-carousel.light-theme-marshmallow {
+		.row {
+			>div {
+				background-color: var(--color-marshmallow);
+				color: var(--midnight);
+			}
+		}
+		section {
+			background-color: var(--color-marshmallow);
+			color: var(--midnight);
+		}
+		h1 {
+			background-color: var(--color-marshmallow);
+			color: var(--midnight);
+		}
+		p {
+			background-color: var(--color-marshmallow);
+			color: var(--midnight);
+		}
+	}
+	.wholesale-fifty-carousel.light-theme-smoke {
+		.row {
+			>div {
+				background-color: var(--color-smoke);
+				color: var(--coal);
+			}
+		}
+		section {
+			background-color: var(--color-smoke);
+			color: var(--coal);
+		}
+		h1 {
+			background-color: var(--color-smoke);
+			color: var(--coal);
+		}
+		p {
+			background-color: var(--color-smoke);
+			color: var(--coal);
+		}
+	}
+	.wholesale-fifty-carousel.dark-theme-coal {
+		.row {
+			>div {
+				background-color: var(--coal);
+				color: var(--color-marshmallow);
+			}
+		}
+		section {
+			background-color: var(--coal);
+			color: var(--color-marshmallow);
+		}
+		h1 {
+			background-color: var(--coal);
+			color: var(--color-marshmallow);
+		}
+		p {
+			background-color: var(--coal);
+			color: var(--color-marshmallow);
+		}
+	}
+	.wholesale-fifty-carousel.dark-theme-midnight {
+		.row {
+			>div {
+				background-color: var(--midnight);
+				color: var(--color-smoke);
+			}
+		}
+		section {
+			background-color: var(--midnight);
+			color: var(--color-smoke);
+		}
+		h1 {
+			background-color: var(--midnight);
+			color: var(--color-smoke);
+		}
+		p {
+			background-color: var(--midnight);
+			color: var(--color-smoke);
+		}
+	}
+}
+
+/* Remove this later */
+.two-column-layout.authoring-mode {
+	.row {
+		>div {
+			background: repeating-linear-gradient( 45deg, var(--color-marshmallow), var(--color-marshmallow) 10px, var(--color-smoke) 10px, var(--color-smoke) 20px );
+			&:first-child {
+				border: solid 1px var(--color-brand-sling-tangerine);
+			}
+			&:last-child {
+				border: solid 1px var(--color-brand-sling-cookie-monster);
+			}
+		}
+	}
+}
+.two-column-layout.card-spacing {
+	.col-md-6 {
+		>div {
+			height: 100%;
+			margin: 0px;
+		}
+	}
+	.content-card {
+		height: 100%;
+		margin: 0px;
+		>div {
+			height: 100%;
+			margin: 0px;
+			>div {
+				height: 100%;
+				margin: 0px;
+				padding: 8px;
+			}
+		}
+	}
+	.contentcard {
+		.card {
+			height: 100%;
+			margin: 0px;
+		}
+	}
+}
+.two-column-layout.card-spacing.authoring-mode {
+	.col-md-6 {
+		>div {
+			height: inherit;
+		}
+	}
+	.content-card {
+		height: inherit;
+		>div {
+			height: inherit;
+			>div {
+				height: inherit;
+			}
+		}
+		.card {
+			height: inherit;
+		}
+	}
+}
+.cmp-carousel__indicators {
+	position: absolute;
+	width: 100%;
+}
+@media (min-width: 768px) {
+	.fifty-image-view {
+		display: none;
+	}
+	.cmp-wholesafifty_full-width {
+		.fifty-image-view {
+			display: none;
+		}
+		.fifty-image-background {
+			width: 50vw;
+		}
+	}
+	.fifty-logo-view {
+		transform: translate(-50%, -50%);
+		bottom: inherit;
+		top: 50%;
+		left: 0px;
+	}
+	.fifty-image-background {
+		background-size: cover;
+		background-position: center;
+		width: 100%;
+		margin-left: -15px;
+		height: 100%;
+		position: absolute;
+	}
+}
+@media (min-width: 992px) {
+	.cmp-wholesafifty_full-width {
+		.fifty-image-view {
+			width: 50vw !important;
+			height: auto !important;
+		}
+	}
+}

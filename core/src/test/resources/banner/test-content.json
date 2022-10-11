@@ -1,0 +1,16 @@
+{
+	"banner": {
+		   "jcr:primaryType":"nt:unstructured",
+		   "jcr:createdBy":"admin",
+		   "bannerOne":"Banner",
+		   "bannerHeaderOne":"Header",
+		   "jcr:lastModifiedBy":"admin",
+		   "srcOne":"/content/wholesale/us/en/splash",
+		   "jcr:created":"Tue Jul 20 2021 21:43:49 GMT+0530",
+		   "buttonTextOne":"Button",
+		   "bannerTextOne":"Banner Description",
+		   "jcr:lastModified":"Tue Jul 20 2021 21:44:40 GMT+0530",
+		   "sling:resourceType":"wholesale/components/content/Banner",
+		   "textIsRich":"true"
+	}
+}

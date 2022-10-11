@@ -1,0 +1,38 @@
+.cmp-tabs {
+	ol {
+		li {
+			font-weight: 800;
+			color: var(--color-cinder);
+			display: inline-block;
+			border-radius: 10px;
+			&:hover {
+				color: var(--color-coal);
+				background-color: #e0e0e2;
+			}
+		}
+		padding: 0px;
+		text-align: center;
+		display: flex;
+		width: fit-content;
+		border-radius: 10px;
+		background-color: var(--color-smoke);
+		li.cmp-tabs__tab--active {
+			background-color: var(--color-coal);
+			color: var(--color-marshmallow);
+		}
+	}
+	.wrapper {
+		margin: auto;
+		width: fit-content;
+	}
+	.bg-color-grey {
+		ol {
+			background-color: var(--color-smoke);
+		}
+	}
+	.bg-color-white {
+		ol {
+			background-color: var(--color-marshmallow);
+		}
+	}
+}

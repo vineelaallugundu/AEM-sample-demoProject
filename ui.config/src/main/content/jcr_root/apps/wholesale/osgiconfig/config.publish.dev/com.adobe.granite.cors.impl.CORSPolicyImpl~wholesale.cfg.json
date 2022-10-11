@@ -1,0 +1,44 @@
+{
+  "alloworigin": [
+    "https://dishwireless--dev.my.salesforce.com",
+	"https://dev-dishwireless.cs1.force.com",
+	"https://dishwireless--dev.livepreview.salesforce-communities.com",
+	"https://dishwireless--dev.builder.salesforce-communities.com",
+	"https://test.salesforce.com",
+	"https://customer-dev.dishwireless.com",
+	"https://dev-dishwireless.cs79.force.com",
+	"https://test-dishwireless.cs24.force.com",
+	"https://int-dishwireless.cs43.force.com",
+	"https://customer.dishwireless.com",
+	"https://dishwireless.force.com",
+	"https://customer-test.dishwireless.com",
+	"https://customer-int.dishwireless.com"
+  ],
+  "alloworiginregexp": [
+  ],	
+  "allowedpaths": [
+	".*"
+  ],
+  "exposedheaders": [	
+  ],
+  "maxage": 1800,
+  "supportedheaders": [
+	"Origin",
+	"Accept",
+	"X-Requested-With",
+	"Content-Type",
+	"Access-Control-Request-Method",
+	"Access-Control-Request-Headers",
+	"Access-Control-Allow-Origin",
+	"Access-Control-Allow-Headers",
+	"Access-Control-Allow-Methods"
+  ],
+  "supportedmethods": [
+	"GET",
+	"HEAD",
+	"POST"
+  ],
+  "supportscredentials": "false"
+}
+
+

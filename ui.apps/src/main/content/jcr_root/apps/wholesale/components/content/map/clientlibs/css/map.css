@@ -1,0 +1,55 @@
+body { 
+    margin: 0;
+    padding: 0;
+}
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+.mapboxgl-ctrl-top-right {
+    right: unset;
+    left: 0;
+}
+.mapboxgl-ctrl-group:not(:empty) {
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    background: #bcbcbc;
+}
+.view-5g {
+    background: #006400;
+    position: absolute;
+    top: 285px;
+    color: #fff;
+    left: 10px;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.marker {
+    background-image: url('/content/dam/wholesale/mapbox-icon.png');
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    max-width: 100%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.yellow-marker {
+    background-image: url('/content/dam/wholesale/alert_icon.svg');
+    background-size: cover;
+    width: 22px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+    top: 30px;
+    left: 40px;
+}
+.mapboxgl-popup {
+    max-width: 200px;
+}
+.mapboxgl-popup-content {
+    text-align: center;
+}

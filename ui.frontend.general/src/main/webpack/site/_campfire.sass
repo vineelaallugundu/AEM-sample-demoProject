@@ -1,0 +1,218 @@
+// Campfire
+// Required Imports
+//@import campfire-variables
+//@import fonts
+
+
+
+// Global Styles
+
+body.aem
+	margin: 0
+	@include t-18()
+	font-family: var(--font-primary)
+	font-weight: $font-weight-medium
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+	text-rendering: optimizeLegibility
+	padding: 0
+	background-color: var(--color-neutral-base)
+	color: var(--color-neutral-content)
+	&.flipped
+		background-color: var(--color-neutral-base-flipped)
+.aem
+	h1, h2, h3, h4, h5, h6, p
+		margin: 0
+
+	// Space CSS Variables
+
+.aem
+	*
+		--space-xxs: #{$space-xxs}
+		--space-xs:  #{$space-xs}
+		--space-s: #{$space-s}
+		--space-m: #{$space-m}
+		--space-l: #{$space-l}
+		--space-xl: #{$space-xl}
+		--space-xxl: #{$space-xxl}
+		--space-xxxl: #{$space-xxxl}
+		&.dense
+			--space-xxs: 0
+			--space-xs:  #{$space-xxs}
+			--space-s: #{$space-xs}
+			--space-m: #{$space-s}
+			--space-l: #{$space-m}
+			--space-xl: #{$space-l}
+			--space-xxl: #{$space-xl}
+			--space-xxxl: #{$space-xxl}
+
+
+
+// Typographic Scale Classes
+.aem
+	.t-62
+		@include t-62()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-62()
+			font-weight: $font-weight-extrabold
+
+	.t-52
+		@include t-52()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-52()
+			font-weight: $font-weight-extrabold
+
+	.t-44
+		@include t-44()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-44()
+			font-weight: $font-weight-extrabold
+
+	.t-36
+		@include t-36()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-36()
+			font-weight: $font-weight-extrabold
+
+	.t-32
+		@include t-32()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-32()
+			font-weight: $font-weight-extrabold
+
+	.t-28
+		@include t-28()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-28()
+			font-weight: $font-weight-extrabold
+
+	.t-24
+		@include t-24()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-24()
+			font-weight: $font-weight-extrabold
+
+	.t-20
+		@include t-20()
+		font-weight: $font-weight-extrabold
+		p
+			@include t-20()
+			font-weight: $font-weight-extrabold
+
+	.t-18
+		@include t-18()
+		font-weight: $font-weight-medium
+		p
+			@include t-18()
+			font-weight: $font-weight-medium
+
+	.t-16
+		@include t-16()
+		font-weight: $font-weight-medium
+		p
+			@include t-16()
+			font-weight: $font-weight-medium
+
+	.t-14
+		@include t-14()
+		font-weight: $font-weight-medium
+		p
+			@include t-14()
+			font-weight: $font-weight-medium
+
+	.t-12
+		@include t-12()
+		font-weight: $font-weight-medium
+		p
+			@include t-12()
+			font-weight: $font-weight-medium
+
+
+
+// Default H1-6 Styles
+.aem
+	h1
+		@include t-44()
+		font-weight: $font-weight-extrabold
+		@media (min-width: $breakpoint-md)
+			@include t-52()
+
+	h2
+		@include t-36()
+		font-weight: $font-weight-extrabold
+		@media (min-width: $breakpoint-md)
+			@include t-44()
+
+	h3
+		@include t-32()
+		font-weight: $font-weight-extrabold
+		@media (min-width: $breakpoint-md)
+			@include t-36()
+
+	h4
+		@include t-28()
+		font-weight: $font-weight-extrabold
+		@media (min-width: $breakpoint-md)
+			@include t-32()
+
+	h5
+		@include t-24()
+		font-weight: $font-weight-extrabold
+
+	h6
+		@include t-20()
+		font-weight: $font-weight-extrabold
+
+	p
+		@include t-18()
+		font-weight: $font-weight-medium
+
+	small
+		@include t-12()
+		font-weight: $font-weight-medium
+
+	strong
+		font-weight: $font-weight-extrabold
+
+.aem
+	a
+		text-decoration: none
+		color: var(--secondary-color-inactive)
+		position: relative
+		font-weight: $font-weight-extrabold
+		&::after
+			@include transition (width, $transition-fast)
+			content: ""
+			position: absolute
+			bottom: 0
+			left: 0
+			height: 10%
+			width: 0
+			background-color: var(--secondary-color-inactive)
+		&:hover
+			color: var(--secondary-color-hover)
+			&::after
+				width: 100%
+				background-color: var(--secondary-color-hover)
+		&:active
+			color: var(--secondary-color-active)
+			&::after
+				width: 100%
+				background-color: var(--secondary-color-active)
+
+
+
+// Global Animations
+
+@include keyframes-animation(focus-pulse)
+	0%
+		@include prefix-property(box-shadow, 0 0 7px 0 transparentize($color-water-night, 0))
+	100%
+		@include prefix-property(box-shadow, 0 0 7px 0 transparentize($color-water-night, 1))

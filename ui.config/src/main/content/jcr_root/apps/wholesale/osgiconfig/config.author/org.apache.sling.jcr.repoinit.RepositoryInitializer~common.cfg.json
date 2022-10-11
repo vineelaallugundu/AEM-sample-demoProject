@@ -1,0 +1,5 @@
+{
+"scripts": ["create group common-authors with path /home/groups/wholesale",
+"set ACL for common-authors\nallow jcr:read on /etc/cloudservices,/etc/importers/bulkeditor,/etc/importers/offline,/libs/commerce/providers, /libs/settings/experience-fragments/templates, /libs/settings/dam/cfm/model-types\nend",
+"add common-authors to group workflow-users"]
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Separator Component"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    helpPath="https://www.adobe.com/go/aem_cmp_separator_v1"
+    trackingFeature="core-components:separator:v1">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+    <items jcr:primaryType="nt:unstructured">
+        <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+            <items jcr:primaryType="nt:unstructured">
+                <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                    <items jcr:primaryType="nt:unstructured">
+                        <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                            <items jcr:primaryType="nt:unstructured">
+                                <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                    <items jcr:primaryType="nt:unstructured">
+                                        <id
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="ID attribute to apply to the component."
+                                                fieldLabel="ID"
+                                                name="./id"/>
+                                        <height
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Specify height for separator"
+                                                fieldLabel="Separator Height"
+                                                name="./separatorHeight">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <zeroRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="0rem"
+                                                        value="0rem"/>
+                                                <pointOneTwoFiveRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="0.125rem"
+                                                        value="0.125rem"/>
+                                                <pointTwoFiveRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="0.25rem"
+                                                        value="0.25rem"/>
+                                                <pointFiveRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="0.5rem"
+                                                        value="0.5rem"/>
+                                                <oneRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="1rem"
+                                                        value="1rem"/>
+                                                <twoRem
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="2rem"
+                                                        value="2rem"/>
+                                            </items>
+                                        </height>
+                                        <color
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                                fieldDescription="Specify color for separator"
+                                                fieldLabel="Separator Color"
+                                                name="./separatorColor">
+                                            <items jcr:primaryType="nt:unstructured">
+                                                <coal
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="coal"
+                                                        value="#171725"/>
+                                                <charcoal
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="charcoal"
+                                                        value="#292938"/>
+                                                <cinder
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="cinder"
+                                                        value="#525261"/>
+                                                <ash
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="ash"
+                                                        value="#c4c4c7"/>
+                                                <smoke
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="smoke"
+                                                        value="#f5f5f6"/>
+                                                <marshmallow
+                                                        jcr:primaryType="nt:unstructured"
+                                                        text="marshmallow"
+                                                        value="#ffffff"/>
+                                            </items>
+                                        </color>
+                                    </items>
+                                </column>
+                            </items>
+                        </columns>
+                    </items>
+                </properties>
+            </items>
+        </tabs>
+    </items>
+    </content>
+</jcr:root>

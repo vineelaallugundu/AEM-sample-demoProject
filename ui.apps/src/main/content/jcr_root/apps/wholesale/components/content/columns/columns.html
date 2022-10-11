@@ -1,0 +1,18 @@
+<!--/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~
+  ~ Grid Component
+  ~ Contains structure to support Grid component.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/-->
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.columnsModel="com.dish.wholesale.core.models.ColumnsModel">
+    <div class="cmp-columns rail-system ${columnsModel.layoutClass} ${wcmmode.edit || wcmmode.design ? 'authoring-mode' : ''}">
+        <div class="row">
+            <sly data-sly-list.key="${columnsModel.grid}">
+                    <div class="columns ${columnsModel.grid[key]}">
+                        <div data-sly-unwrap data-sly-resource="${key @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+                    </div>
+            </sly>
+        </div>
+    </div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.columns}"></sly>
+</sly>

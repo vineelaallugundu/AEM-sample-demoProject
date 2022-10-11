@@ -1,0 +1,332 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 data-sly-use.salesforcemodel="com.dish.wholesale.core.models.SalesforceLeadModel">
+	<div class="cmp-sales-lead overlay">
+		<script src="https://hcaptcha.com/1/api.js" async defer></script>
+		<iframe name="dummyframe" id="dummyframe" class="d-none"></iframe>
+		<form action="${salesforcemodel.salesforceUrl}" id="myForm" target="dummyframe" method="POST">
+			<div class="sales-lead-form">
+				<div class="form-container">
+					<input type=hidden name="oid" id="salesforceOid" value="${salesforcemodel.salesforceOid}" />
+					<input type=hidden name="retURL" value="${currentPage.getPath}" />
+					<input type=hidden name="lead_source" id="leadSource" value="${salesforcemodel.salesforceLeadSource}" />
+					<h5>Tell us about your company</h5>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="company" class="floating-label">${salesforcemodel.company !=undefined ? salesforcemodel.company : 'Company Name'}</label>
+									<input id="company" type="textarea" maxlength="80" name="company" size="20" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-9">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="street" class="floating-label">${salesforcemodel.street !=undefined ? salesforcemodel.street : 'Street'}</label>
+									<input id="street" maxlength="80" name="street" type="text" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="zip" class="floating-label">${salesforcemodel.street !=undefined ? salesforcemodel.street : 'Zip'}</label>
+									<input id="zip" maxlength="80" name="zip" type="text" onblur="validateInput(this);" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<span id="error-msg-zip"  class="d-none text-danger">Please enter valid zip code</br></br></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="city" class="floating-label">${salesforcemodel.city !=undefined ? salesforcemodel.city : 'City'}</label>
+									<input id="city" type="textarea" maxlength="80" class="city-width" name="city" size="20" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="state_code" class="floating-label">${salesforcemodel.state !=undefined ? salesforcemodel.state : 'State'}</label>
+							<select id="state_code" class="state-country" name="state_code" required>
+								<option selected="selected"></option>
+								<option value="AL">AL</option>
+								<option value="AK">AK</option>
+								<option value="AZ">AZ</option>
+								<option value="AR">AR</option>
+								<option value="CA">CA</option>
+								<option value="CO">CO</option>
+								<option value="CT">CT</option>
+								<option value="DE">DE</option>
+								<option value="DC">DC</option>
+								<option value="FL">FL</option>
+								<option value="GA">GA</option>
+								<option value="HI">HI</option>
+								<option value="ID">ID</option>
+								<option value="IL">IL</option>
+								<option value="IN">IN</option>
+								<option value="IA">IA</option>
+								<option value="KS">KS</option>
+								<option value="KY">KY</option>
+								<option value="LA">LA</option>
+								<option value="ME">ME</option>
+								<option value="MD">MD</option>
+								<option value="MA">MA</option>
+								<option value="MI">MI</option>
+								<option value="MN">MN</option>
+								<option value="MS">MS</option>
+								<option value="MO">MO</option>
+								<option value="MT">MT</option>
+								<option value="NE">NE</option>
+								<option value="NV">NV</option>
+								<option value="NH">NH</option>
+								<option value="NJ">NJ</option>
+								<option value="NM">NM</option>
+								<option value="NY">NY</option>
+								<option value="NC">NC</option>
+								<option value="ND">ND</option>
+								<option value="OH">OH</option>
+								<option value="OK">OK</option>
+								<option value="OR">OR</option>
+								<option value="PA">PA</option>
+								<option value="RI">RI</option>
+								<option value="SC">SC</option>
+								<option value="SD">SD</option>
+								<option value="TN">TN</option>
+								<option value="TX">TX</option>
+								<option value="UT">UT</option>
+								<option value="VT">VT</option>
+								<option value="VA">VA</option>
+								<option value="WA">WA</option>
+								<option value="WV">WV</option>
+								<option value="WI">WI</option>
+								<option value="WY">WY</option>
+							</select>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="country_code" class="floating-label">${salesforcemodel.country !=undefined ? salesforcemodel.country : 'Country'}</label>
+									<select id="country_code" class="state-country" name="country_code" required>
+										<option value="US" selected="selected">US</option>
+									</select>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+					</div>
+					<h5>Product interest</h5>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="interests">
+								<div id="product_interest" class="multiselect" required>
+									<label  for="private-network">
+										<input class="interests__checkbox" type="checkbox" id="private-network" name="${salesforcemodel.productInterestID}" value="Private Network"
+											   style="width: 25px;height: 30px;margin: 11px;vertical-align: middle;" onchange="showMore(this);"/>
+										Private Network
+									</label>
+
+									<label for="spectrum-leasing">
+										<input class="interests__checkbox" type="checkbox" id="spectrum-leasing" name="${salesforcemodel.productInterestID}" value="Spectrum Leasing"
+   												style="width: 25px;height: 30px;margin: 11px;vertical-align: middle;" onchange="showMore(this);"/>
+										Spectrum Leasing
+									</label>
+
+									<label for="wholesale-wireless">
+										<input class="interests__checkbox" type="checkbox" id="wholesale-wireless" name="${salesforcemodel.productInterestID}" value="Wholesale Wireless"
+    											style="width: 25px;height: 30px;margin: 11px;vertical-align: middle;" onchange="showMore(this);"/>
+										Wholesale Wireless
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="unknown-section">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="description" class="floating-label">${salesforcemodel.description !=undefined ? salesforcemodel.description : 'Please let us know what we can do to serve your needs.'}</label>
+										<input id="description" name="description" type="textarea" required></input>
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="startDate" class="floating-label dates-label">Anticipated Start Date</label>
+										<input type="text" maxlength="10" id="startDate" name="${salesforcemodel.startDateID}" placeholder="mm/dd/yyyy"
+												oninput="this.value = dateFormat(this.value, event)" onblur="checkStart(this.value)" required/>
+									</div>
+									<div class="status-bar"></div>
+								</div>
+								<span id="error-msg"  class="d-none text-danger">Please enter valid start date</span>
+								<span id="error-msg3"  class="d-none text-danger">Please select a date after today</span>
+							</div>
+							
+						</div>
+					</div>
+					<div id="spectrum-leasing-expanded" class="d-none">
+						<div class="row">
+							<div class="col-md-12">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="desired-spectrum" class="floating-label">Desired Spectrum</label>
+										<select id="desired-spectrum" type="text" name="${salesforcemodel.desiredSpectrum}">
+											<option value="" selected="selected">--None--</option>
+											<option value="CBRS">CBRS</option>
+										</select>
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="usage-type" class="floating-label">Usage Type</label>
+										<select id="usage-type" type="text" name="${salesforcemodel.usageType}">
+											<option value="" selected="selected">--None--</option>
+											<option value="Indoor">Indoor</option> 
+											<option value="Outdoor">Outdoor</option> 
+											<option value="Indoor &amp; Outdoor">Indoor &amp; Outdoor</option>
+										</select>
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="intended-length" class="floating-label">Intended Length of Lease (Months)</label>
+										<input id="intended-length" min="0" type="number" name="${salesforcemodel.intendedLength}" />
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="estimated-radius" class="floating-label">Estimated Radius of Deployment (Miles)</label>
+										<input id="estimated-radius" min="0" type="number" step="any" name="${salesforcemodel.estimatedRadius}" />
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="input-field text-input day">
+									<div class="text">
+										<label for="intended-use" class="floating-label">Intended Use for Spectrum</label>
+										<input id="intended-use" type="text" name="${salesforcemodel.intendedUse}" />
+									</div>
+									<div class="status-bar"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<h5>Tell us about yourself</h5>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="title" class="floating-label">${salesforcemodel.title !=undefined ? salesforcemodel.title : 'Title'}</label>
+									<input id="title" maxlength="80" name="title" size="20" type="text" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="first_name" class="floating-label">${salesforcemodel.firstNameLabel !=undefined ? salesforcemodel.firstNameLabel : 'First Name'}</label>
+									<input id="first_name" maxlength="80" name="first_name" size="20" type="text" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-6 last-name">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="last_name" class="floating-label">${salesforcemodel.lastNameLabel !=undefined ? salesforcemodel.lastNameLabel : 'Last Name'}</label>
+									<input id="last_name" maxlength="80" name="last_name" size="20" type="text" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-7">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="email" class="floating-label">${salesforcemodel.email !=undefined ? salesforcemodel.email : 'Email'}</label>
+									<input id="email" class="email-width" maxlength="80" name="email" size="20" type="email" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+						<div class="col-md-5 phone">
+							<div class="input-field text-input day">
+								<div class="text">
+									<label for="phone" class="floating-label">${salesforcemodel.phone !=undefined ? salesforcemodel.phone : 'Phone'}</label>
+									<input id="phone" class="phone-width" maxlength="10" name="phone" size="20" type="text" required/>
+								</div>
+								<div class="status-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="h-captcha" data-sitekey="${salesforcemodel.hcaptchaSiteKey}" data-callback="hcaptchaCallback" data-theme="light"></div>
+						</div>
+					</div>
+					<input 
+						type="submit" 
+						value="Submit" 
+						class="h-captcha cf-button cmp-button" 
+						id="form-submit" 
+						name="btnSubmit" 
+						data-sitekey="${salesforcemodel.hcaptchaSiteKey}" 
+						data-callback="onSubmit" 
+						onfocus="startLoader(this);"/>
+				</div>
+			</div>
+		</form>
+		<div class="popup-container">
+			<div class="row no-gutters">
+				<div class="m-auto">
+					<div id="myPopupSuccess" class="alert alert-success d-none">
+						<h5>Success: Thank you for your interest!</h5>
+					</div>
+					<div id="myPopupError" class="alert alert-danger d-none" role="alert">
+						<h5>Error: ${salesforcemodel.validationErrorMessage !=undefined ? salesforcemodel.validationErrorMessage : 'Please try again later.'}</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = !salesforcemodel.lastNameLabel}"></sly>
+</sly>

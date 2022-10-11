@@ -1,0 +1,10 @@
+{
+		"hero": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "image": "/content/dam/wholesale/test.jpeg",
+			  "alt": "Alt Text",
+			  "heroTitle": "Hero Title Text",
+			  "heroHeader": "Hero Header Text",
+			  "sling:resourceType": "wholesale/components/content/hero"
+		}
+	}

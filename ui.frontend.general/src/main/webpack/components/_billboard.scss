@@ -1,0 +1,45 @@
+a.billboard.cta.water.filled {
+	border: none;
+	background-color: #384AFF;
+	box-shadow: 0 4px 0 0 #0011b8;
+	&:hover {
+		background-color: #051cff;
+		box-shadow: 0 3px 0 0 #0011b8;
+		color: white;
+		text-decoration: none;
+	}
+	&:focus {
+		background-color: #051cff;
+		box-shadow: 0 3px 0 0 #0011b8;
+		color: white;
+		text-decoration: none;
+	}
+}
+div.billboard.component {
+	margin-left: 70px;
+}
+a.billboard.cta {
+	display: inline-block;
+	box-sizing: border-box;
+	min-width: 110px;
+	border-radius: 19px;
+	z-index: 10;
+	padding: 9px 32px 8px;
+	opacity: 1;
+	color: white;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 21px;
+	line-height: 1.3125rem;
+	font-family: proximanova,Gotham,Montserrat,Trebuchet,sans-serif;
+	font-weight: 800;
+	text-align: center;
+	position: relative;
+	cursor: pointer;
+	&:hover {
+		transform: translateY(1px);
+	}
+	&:focus {
+		transform: translateY(1px);
+	}
+}

@@ -1,0 +1,19 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 data-sly-use.contentBanner="com.dish.wholesale.core.models.ContentBannerModel">
+	<div data-sly-test="${properties.buttonText}" class="content-banner-wrapper">
+		<div class="row">
+			<div class="col-md-12 col-lg-6">
+				<div class="position-relative w-100 h-100">
+					<img loading="lazy" src="${contentBanner.image}" alt="Image not found" onerror="this.src='https://www.dish.com/images/nav/dishLogo.svg'">
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-6 pb-5 pt-5 content">
+				<h1 class="pb-4">${contentBanner.bannerHeader}</h1>
+				${contentBanner.bannerDesc @ context='html'}
+				<a class="mt-4 cta-button btn-coal btn-small" href="${contentBanner.src}.html">${contentBanner.buttonText}</a>
+			</div>
+		</div>
+	</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = !properties.buttonText}"></sly>
+</sly>
+

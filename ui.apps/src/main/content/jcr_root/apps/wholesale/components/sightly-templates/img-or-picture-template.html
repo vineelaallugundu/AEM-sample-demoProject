@@ -1,0 +1,17 @@
+<template data-sly-template.tagType="${@tagName,imgSrc,altText,cssClass,deskW,tabW,mobW,lazy}" data-sly-unwrap>
+    <sly data-sly-use.transformedPathDesktop="${'/apps/wholesale/components/content/sightly-templates/imagePathTransformer.js' @ imagePath=imgSrc,width=deskW}">
+        <sly data-sly-test="${tagName=='img'}">
+            <img src="${transformedPathDesktop}" class="${cssClass} ${transformedPathDesktop}" alt="${altText}">
+        </sly>
+    </sly>
+    <sly data-sly-test="${tagName=='picture'}">
+        <sly data-sly-use.transformedPathTablet="${'/apps/wholesale/components/content/sightly-templates/imagePathTransformer.js' @ imagePath=imgSrc,width=tabW}">
+            <sly data-sly-use.transformedPathMobile="${'/apps/wholesale/components/content/sightly-templates/imagePathTransformer.js' @ imagePath=imgSrc,width=mobW}">
+                <picture>
+                    <source data-sly-test="${deskW}" media="(min-width: 1024px)" srcset="${transformedPathDesktop @ context='uri'}">
+                    <source data-sly-test="${tabW}" media="(min-width: 768px) and (max-width: 1023px)" srcset="${transformedPathTablet @ context='uri'}">
+                    <source data-sly-test="${mobW}" media="(min-width: 320px) and (max-width: 768px)" srcset="${transformedPathMobile @ context='uri'}">
+                    <img src="${transformedPathDesktop}" class="${cssClass}" alt="${altText}">
+                </picture>
+            </sly>
+</template>

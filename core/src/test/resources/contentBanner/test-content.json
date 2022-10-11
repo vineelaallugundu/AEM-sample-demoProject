@@ -1,0 +1,11 @@
+{
+		"content_banner": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "image": "/content/dam/wholesale/test.jpeg",
+			  "buttonText": "Button Text",
+			  "bannerHeader": "Content Banner Header Text",
+			  "bannerDesc": "Content Banner Description",
+			  "src" : "/content/wholesale/us/en/test",
+			  "sling:resourceType": "wholesale/components/content/content-banner"
+		}
+	}

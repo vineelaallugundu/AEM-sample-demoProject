@@ -1,0 +1,30 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.feedbackModel="com.dish.wholesale.core.models.FeedbackModel">
+   <script src="https://hcaptcha.com/1/api.js" async defer></script>
+   <div class="wrapper">
+      <div class="feedback">
+         <div class="feedback-view">
+            <div class="feedback-text"><span>${feedbackModel.feedbackText}</span>
+               <button type="button" class="btn feedback-btn btn-lg"
+                  data-toggle="modal" data-target="#myModal" id="leaveFeedackButton">${feedbackModel.feedbackButtonLabel}
+               </button>
+            </div>
+         </div>
+         <div id="feedbackBlock">
+            <div class="feedback-block">
+               <div class="submit-view">
+                  <span>Feedback</span>
+                  <p>
+                     <textarea placeholder="Write your feedback here." id="feedbackText" class="text-area"></textarea>
+                  </p>
+                  <div class="h-captcha" data-sitekey="${feedbackModel.hcaptchaSiteKey}" data-theme="dark"></div>
+               </div>
+               <div class="submit-btn">
+                  <button type="button" class="btn btn-default" id="feedbackSubmit">Submit</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.feedbackText}"></sly>
+</sly>

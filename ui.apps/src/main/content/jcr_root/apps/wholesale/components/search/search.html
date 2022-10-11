@@ -1,0 +1,27 @@
+<div class="search">
+    <section class="cmp-search" role="search" data-cmp-is="search" data-cmp-min-length="3" data-cmp-results-size="10">
+        <form  class="cmp-search__form" data-cmp-hook-search="form" action="${currentPage.path @ addSelectors=['dishsearchresults'], extension='json', suffix = search.relativePath}"
+               method="get" autocomplete="on">
+            <div class="cmp-search__field" >
+                <button class="boxicon searchicon" id="clickSearch" type="button">
+                    <i class="cmp-search__icon" data-cmp-hook-search="icon"></i>
+                </button>
+                <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
+
+                <input id="inputbox"
+                       class="cmp-search__input" data-cmp-hook-search="input" type="text" name="fulltext" placeholder="Search" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false"/>
+
+                <button class="cmp-search__clear" data-cmp-hook-search="clear" >
+                    <i class="cmp-search__clear-icon" ></i>
+                </button>
+
+            </div>
+        </form>
+        <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false"></div>
+        <script data-cmp-hook-search="itemTemplate" type="x-template">
+            <a class="cmp-search__item" data-cmp-hook-search="item">
+                <span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span>
+            </a>
+        </script>
+    </section>
+</div>

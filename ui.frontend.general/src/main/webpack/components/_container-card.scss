@@ -1,0 +1,75 @@
+.container-card {
+	position: relative;
+	>.card {
+		box-sizing: border-box;
+		border-radius: .9375rem;
+		border: 1px solid transparent;
+		padding: 1rem;
+		margin: 0;
+		margin-left: 1rem;
+		margin-right: 1rem;
+		background-repeat: no-repeat;
+		position: inherit;
+		.content-wrapper {
+			z-index: 100;
+		}
+	}
+}
+.horizontal-none {
+	z-index: 100;
+	position: relative;
+}
+.vertical-none {
+	z-index: 100;
+	position: relative;
+}
+.horizontal-left {
+	>.content-wrapper {
+		position: absolute;
+		left: 0px;
+	}
+}
+.horizontal-center {
+	>.content-wrapper {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+}
+.horizontal-right {
+	>.content-wrapper {
+		position: absolute;
+		right: 0px;
+	}
+}
+.vertical-top {
+	>div {
+		position: absolute;
+	}
+	>.content-wrapper {
+		top: 0px;
+	}
+}
+.vertical-center {
+	>div {
+		position: absolute;
+	}
+	>.content-wrapper {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+.vertical-bottom {
+	>div {
+		position: absolute;
+	}
+	>.content-wrapper {
+		bottom: 0px;
+	}
+}
+.vertical-center.horizontal-center {
+	>.content-wrapper {
+		top: 50%;
+		transform: translate(-50%,-50%);
+	}
+}

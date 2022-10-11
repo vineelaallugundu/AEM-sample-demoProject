@@ -1,0 +1,36 @@
+{
+	"noradioselect":{
+		"columns": 0,
+		"lines": 1,
+		"layoutClass": "layout",
+		"sling:resourceType": "wholesale/components/layout/2-column-layout"
+	},
+
+	"onepanelradioselect":{
+		"columns": 1,
+		"lines": 1,
+		"layoutClass": "layout",
+		"sling:resourceType": "wholesale/components/layout/2-column-layout"
+	},
+
+    "twopanelradioselect":{
+		"columns": 2,
+		"lines": 1,
+		"layoutClass": "layout",
+		"sling:resourceType": "wholesale/components/layout/2-column-layout"
+	},
+
+	"threepanelradioselect":  {
+		"columns": 3,
+		"lines": 1,
+		"layoutClass": "layout",
+		"sling:resourceType": "wholesale/components/layout/3-column-layout"
+	},
+
+   "fourpanelradioselect":  {
+		"columns": 4,
+	    "lines": 1,
+	    "layoutClass": "layout",
+		"sling:resourceType": "wholesale/components/layout/4-column-layout"
+	}
+}

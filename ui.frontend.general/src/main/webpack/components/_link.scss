@@ -1,0 +1,149 @@
+.link-wrapper {
+    .center {
+        text-align: center;
+    }
+    .left {
+        text-align: left;
+    }
+    .right {
+        text-align: right;
+    }
+	&.neutral {
+	    a {
+	       color: var(--color-coal);
+	       .color {
+                fill: var(--color-coal);
+            }
+	        &:hover {
+                color: var(--color-charcoal);
+                .color {
+                    fill: var(--color-charcoal);
+                }
+                text-decoration: underline;
+	        }
+	        &:active {
+                color: var(--color-cinder);
+                .color {
+                    fill: var(--color-cinder);
+                }
+            }
+	    }
+	}
+
+	&.secondary {
+	    a {
+            color: var(--water-day);
+            .color {
+                fill: var(--water-day);
+            }
+            &:hover {
+                color: darken($color-water-day, 10%);
+                .color {
+                    fill: darken($color-water-day, 10%);
+                }
+                text-decoration: underline;
+            }
+            &:active {
+                color: darken($color-water-day, 25%);
+                .color {
+                    fill: darken($color-water-day, 25%);
+                }
+            }
+        }
+	}
+}
+.section {
+    &.light-theme-marshmallow, &.light-theme-smoke {
+        .link-wrapper{
+            &.neutral {
+                a {
+                    color: var(--color-coal);
+                    .color {
+                        fill: var(--color-coal);
+                    }
+                    &:hover {
+                        color: var(--color-charcoal);
+                        .color {
+                            fill: var(--color-charcoal);
+                        }
+                        text-decoration: underline;
+                    }
+                    &:active {
+                        color: var(--color-cinder);
+                        .color {
+                            fill: var(--color-cinder);
+                        }
+                    }
+                }
+            }
+
+            &.secondary {
+                a {
+                    color: var(--water-day);
+                    .color {
+                        fill: var(--water-day);
+                    }
+                    &:hover {
+                        color: darken($color-water-day, 10%);
+                        .color {
+                            fill: darken($color-water-day, 10%);
+                        }
+                        text-decoration: underline;
+                    }
+                    &:active {
+                        color: darken($color-water-day, 25%);
+                        .color {
+                            fill: darken($color-water-day, 25%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.dark-theme-coal, &.dark-theme-midnight {
+        .link-wrapper{
+            &.neutral {
+                a {
+                    color: var(--color-marshmallow);
+                    .color {
+                        fill: var(--color-marshmallow);
+                    }
+                    &:hover {
+                        color: var(--color-smoke);
+                        .color {
+                            fill: var(--color-smoke);
+                        }
+                    }
+                    &:active {
+                        color: var(--color-ash);
+                        .color {
+                            fill: var(--color-ash);
+                        }
+                    }
+                }
+            }
+
+            &.secondary {
+                a {
+                    .color {
+                        fill: var(--water-night);
+                    }
+                    color: var(--water-night);
+                    &:hover {
+                        color: lighten($color-water-night, 10%);
+                        .color {
+                            fill: lighten($color-water-night, 10%);
+                        }
+                        text-decoration: underline;
+                    }
+                    &:active {
+                        color: lighten($color-water-night, 25%);
+                        .color {
+                            fill: lighten($color-water-night, 25%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

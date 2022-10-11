@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:granite="http://www.adobe.com/jcr/granite/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Form Text Field"
+    sling:resourceType="cq/gui/components/authoring/dialog"
+    extraClientlibs="[core.wcm.components.form.text.v2.editor]"
+    helpPath="https://www.adobe.com/go/aem_cmp_form_text_v2"
+    trackingFeature="core-components:form-text:v2">
+    <content
+        granite:class="cmp-form-text__editDialog"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <properties
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Sales Lead Form properties"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <firstNameLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The first name text"
+                                                fieldLabel="First Name Label"
+                                                name="./firstNameLabel"
+                                                wrapperClass="cmp-form-textfield-rows"/>
+                                            <lastNameLabel
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The last name text"
+                                                fieldLabel="Last Name Label"
+                                                name="./lastNameLabel"/>
+                                            <title
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The title label text"
+                                                fieldLabel="Title Label"
+                                                name="./titleLabel"/>
+                                            <phonenumber
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The phone label text"
+                                                fieldLabel="Phone Label"
+                                                name="./phoneNumberLabel"/>
+                                            <email
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The email label text"
+                                                fieldLabel="Email Label"
+                                                name="./email"
+                                                text="Hide the label from being displayed"
+                                                value="true"/>
+                                            <company
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The company name label text"
+                                                fieldLabel="Company Name Label"
+                                                name="./company"/>
+                                            <street
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The street label text"
+                                                fieldLabel="Street Label"
+                                                name="./street"/>
+                                            <zip
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The street label text"
+                                                fieldLabel="Zip Label"
+                                                name="./zip"/>
+                                            <city
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The city label text"
+                                                fieldLabel="City Label"
+                                                name="./city"/>
+                                            <country
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The country label text"
+                                                fieldLabel="Country Label"
+                                                name="./country"/>
+                                            <state
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The state label text"
+                                                fieldLabel="State Label"
+                                                name="./state"/>
+                                            <productInterest
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="The product interest label text"
+                                                fieldLabel="The product interest label text"
+                                                name="./productInterest"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </properties>
+                    <form-submit
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Salesforce Lead "
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <salesforce-servlet-url
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Servlet Url where the form data will be posted"
+                                                fieldLabel="Saleforce URL"
+                                                name="./salesforceUrl"
+                                                required="{Boolean}true"/>
+                                            <salesforce-oid
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="oID value for salesforce server"
+                                                fieldLabel="Saleforce oID value"
+                                                name="./salesforceOid"
+                                                required="{Boolean}true"/>
+                                            <salesforce-product-interest-id
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Product Interest ID for salesforce server"
+                                                 fieldLabel="Product Interest ID value"
+                                                 name="./productInterestID"
+                                                 required="{Boolean}true"/>
+                                            <salesforce-desired-spectrum
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Desired Spectrum ID for salesforce server"
+                                                 fieldLabel="Desired Spectrum ID value"
+                                                 name="./desiredSpectrum"
+                                                 required="{Boolean}true"/>
+                                            <salesforce-usage-type
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Usage Type ID for salesforce server"
+                                                 fieldLabel="Usage Type ID value"
+                                                 name="./usageType"
+                                                 required="{Boolean}true"/>
+                                            <salesforce-estimated-radius
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Estimated Radius of Deployment for salesforce server"
+                                                 fieldLabel="Estimated Radius of Deployment ID value"
+                                                 name="./estimatedRadius"
+                                                 required="{Boolean}true"/>
+                                            <salesforce-intended-length
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Intended Length of Lease for salesforce server"
+                                                 fieldLabel="Intended Length of Lease value"
+                                                 name="./intendedLength"
+                                                 required="{Boolean}true"/>
+                                            <salesforce-intended-use
+                                                 jcr:primaryType="nt:unstructured"
+                                                 sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                 fieldDescription="Intended Use for Spectrum for salesforce server"
+                                                 fieldLabel="Intended Use for Spectrum ID value"
+                                                 name="./intendedUse"
+                                                 required="{Boolean}true"/>
+                                            <service-start-date-id
+                                                    jcr:primaryType="nt:unstructured"
+                                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                    fieldDescription="Service start date ID"
+                                                    fieldLabel="Service start date ID"
+                                                    name="./startDateID"
+                                                    required="{Boolean}true"/>
+                                            <salesforce-lead-source
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Lead source for salesforce"
+                                                fieldLabel="Saleforce Lead source value"
+                                                name="./salesforceLeadSource"
+                                                required="{Boolean}true"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </form-submit>
+                    <form-validation
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Sales Lead Form Validation"
+                        sling:resourceType="granite/ui/components/coral/foundation/container"
+                        margin="{Boolean}true">
+                        <items jcr:primaryType="nt:unstructured">
+                            <columns
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                                margin="{Boolean}true">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <column
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/container">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <validation-success-message
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Validation success message after form is successfully submitted"
+                                                fieldLabel="Validation Success message"
+                                                name="./validationSuccessMessage"/>
+                                            <validation-error-message
+                                                jcr:primaryType="nt:unstructured"
+                                                sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                                fieldDescription="Validation error message after form submission fails"
+                                                fieldLabel="Validation error Message"
+                                                name="./validationErrorMessage"/>
+                                        </items>
+                                    </column>
+                                </items>
+                            </columns>
+                        </items>
+                    </form-validation>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,98 @@
+.cmp-loader
+  position: fixed
+  width: 100vw
+  height: 100vh
+  z-index: 10000
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  .cmp_loader__lockup
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+    p
+      width: 100%
+      text-align: center
+    .cmp-loader__icon-container
+      margin: 0 0 3rem
+      width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      .cmp-loader__icon
+        position: relative
+        animation: loader-spin 2s $transition-ease infinite both
+        .cmp-loader__circle
+          position: absolute
+          animation: loader 2s $transition-ease infinite alternate
+          height: .5rem
+          width: .5rem
+          border-radius: .25rem
+          left: -.25rem
+          top: -.25rem
+          background-color: $color-coal
+          &#loader-circle-1
+            animation: loader-1 2s ease-in-out infinite alternate
+          &#loader-circle-2
+            animation: loader-2 2s ease-in-out infinite alternate
+          &#loader-circle-3
+            animation: loader-3 2s ease-in-out infinite alternate
+          &#loader-circle-4
+            animation: loader-4 2s ease-in-out infinite alternate
+
+.night
+  .cmp-loader
+    background-color: transparentize($color-coal, .1)
+
+.day
+  .cmp-loader
+    background-color: transparentize($color-marshmallow, .1)
+
+@include keyframes-animation(loader-spin)
+  0%
+    @include prefix-property(transform, rotateZ(0deg))
+  100%
+    @include prefix-property(transform, rotateZ(360deg))
+
+
+@include keyframes-animation(loader-1)
+  0%
+    @include prefix-property(transform, translateX(0rem))
+  25%
+    @include prefix-property(transform, translateX(1rem))
+  75%
+    @include prefix-property(transform, translateX(1rem))
+  100%
+    @include prefix-property(transform, translateX(0rem))
+
+@include keyframes-animation(loader-2)
+  0%
+    @include prefix-property(transform, translateY(0rem))
+  25%
+    @include prefix-property(transform, translateY(1rem))
+  75%
+    @include prefix-property(transform, translateY(1rem))
+  100%
+    @include prefix-property(transform, translateY(0rem))
+
+@include keyframes-animation(loader-3)
+  0%
+    @include prefix-property(transform, translateX(0rem))
+  25%
+    @include prefix-property(transform, translateX(-1rem))
+  75%
+    @include prefix-property(transform, translateX(-1rem))
+  100%
+    @include prefix-property(transform, translateX(0rem))
+
+@include keyframes-animation(loader-4)
+  0%
+    @include prefix-property(transform, translateY(0rem))
+  25%
+    @include prefix-property(transform, translateY(-1rem))
+  75%
+    @include prefix-property(transform, translateY(-1rem))
+  100%
+    @include prefix-property(transform, translateY(0rem))

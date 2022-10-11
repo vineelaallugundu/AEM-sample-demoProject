@@ -1,0 +1,4 @@
+{
+"name":"sync",
+"packageBuilder.target":"(name=default)"
+}

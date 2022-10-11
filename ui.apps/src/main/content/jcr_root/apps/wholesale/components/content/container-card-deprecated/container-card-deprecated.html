@@ -1,0 +1,51 @@
+<sly data-sly-test= "${wcmmode.edit}">
+	<h5>Wholesale Container Component (Deprecated): Edit this component</h5>
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+    <sly data-sly-call="${clientlib.all @ categories='wholesale.components.containercard-deprecated'}">
+</sly>
+<sly data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component" />
+<sly data-sly-use.containerCardModel="com.dish.wholesale.core.models.ContainerCardModel"></sly>
+<div class="container-card card-${containerCardModel.guid}">
+	<div id="${properties.id != null ? properties.id : component.id}" class="card ${containerCardModel.backgroundCss != 'inherit' ? 'image-background-set' : ''}"
+				style="
+				background-size: ${containerCardModel.bgSize @ context='styleToken'};
+				background-position: ${containerCardModel.bgPosition @ context='styleToken'};
+				/*min-height:${wcmmode.edit?'500px':'50vh' @ context='text'};*/
+				/*position:${properties.verticalAlignment=='middle'?'absolute':'relative' @ context='styleToken'};
+				text-align:${properties.horizontalAlignment @ context='styleToken'};*/
+				background-image:${containerCardModel.backgroundCss @ context='text'};
+				border-color:${properties.bordercolor @ context='styleToken'};
+				box-shadow:${properties.containerDropShadow @ context='text'};
+				min-height:${wcmmode.edit?'500px':properties.containerHeight @ context='styleToken'};
+				border-radius:${properties.containerRadius @ context='styleToken'};
+				padding:${properties.containerPadding @ context='styleToken'};
+				margin:${properties.containerMargin @ context='styleToken'};">
+		<div class="horizontal-${properties.horizontalAlignment} vertical-${properties.verticalAlignment}">
+			<div class="content-wrapper">
+				<sly data-sly-resource="${'par' @ resourceType='/libs/wcm/foundation/components/responsivegrid'}"></sly>
+			</div>
+		</div>
+		<div data-sly-test="${containerCardModel.backgroundCss != 'inherit'}" class="accessibility-layer"></div>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

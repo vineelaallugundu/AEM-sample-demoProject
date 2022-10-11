@@ -1,0 +1,18 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+	 <br> <br>
+	<div class="jobs-form" style="padding: 10px;">
+		<div class="jobs-container">
+			<div id="results" role="alert"></div>
+			<div class="buttons">
+				<a href="javascript:void(0)" id="prev">Previous</a>
+				<a href="javascript:void(0)" id="next">Next</a>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="wait"></div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+</sly>
+
+
+
+

@@ -1,0 +1,60 @@
+<settings xmlns="https://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="https://maven.apache.org/SETTINGS/1.0.0
+                        https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <proxies>
+        <proxy>
+            <id>optional</id>
+            <active>true</active>
+            <protocol>http</protocol>
+            <host>artifactory-proxy.global.dish.com</host>
+            <port>8080</port>
+        </proxy>
+    </proxies>
+    <profiles>
+        <!-- ====================================================== -->
+        <!-- P U B L I C P R O F I L E -->
+        <!-- ====================================================== -->
+        <profile>
+            <id>artifactory</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <repositories>
+                <repository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>remote-repos</name>
+                    <url>https://artifactory.global.dish.com/artifactory/remote-repos</url>
+                </repository>
+                <repository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>libs-snapshot</name>
+                    <url>https://artifactory.global.dish.com/artifactory/libs-snapshot</url>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <snapshots>
+                        <enabled>false</enabled>
+                    </snapshots>
+                    <id>central</id>
+                    <name>plugins-release</name>
+                    <url>https://artifactory.global.dish.com/artifactory/plugins-release</url>
+                </pluginRepository>
+                <pluginRepository>
+                    <snapshots />
+                    <id>snapshots</id>
+                    <name>plugins-release</name>
+                    <url>https://artifactory.global.dish.com/artifactory/plugins-release</url>
+                </pluginRepository>
+            </pluginRepositories>
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>artifactory</activeProfile>
+    </activeProfiles>
+</settings>

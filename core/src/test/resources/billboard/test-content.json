@@ -1,0 +1,12 @@
+{
+	
+		"billboard": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "billboardTitle": "Title test",
+			  "billboardSubtitle": "SubTitle Text",
+			  "billboardDescription": "Description Text",
+			  "billboardButtonLabel": "Button Label",
+			  "billboardButtonSrc": "/content/wholesale",
+			  "sling:resourceType": "wholesale/components/content/billboard"
+		}
+	}

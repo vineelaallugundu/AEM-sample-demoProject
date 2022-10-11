@@ -1,0 +1,19 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <div class="container cmp-job-search">
+        <div class="jobs-form">
+            <div class="jobs-container">
+                <input type="text" id="name" class="form-control form-input" placeholder="Search for opportunities">
+                <em id="search" class="fas fa-search"></em>
+                        <div class="no-data">No results found</div>
+                        <div class="pagination"></div>
+                        <div id="results" role="alert"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="wait"></div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+</sly>
+
+
+

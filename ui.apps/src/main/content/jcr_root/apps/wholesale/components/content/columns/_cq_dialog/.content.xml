@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+		  jcr:primaryType="nt:unstructured"
+		  jcr:title="Panel Builder"
+		  sling:resourceType="cq/gui/components/authoring/dialog">
+	<content
+			jcr:primaryType="nt:unstructured"
+			sling:resourceType="granite/ui/components/coral/foundation/container">
+		<items jcr:primaryType="nt:unstructured">
+			<tabs
+					jcr:primaryType="nt:unstructured"
+					sling:resourceType="granite/ui/components/coral/foundation/tabs"
+					maximized="{Boolean}true">
+				<items jcr:primaryType="nt:unstructured">
+					<configurePanel
+							jcr:primaryType="nt:unstructured"
+							jcr:title="Configure Panel"
+							sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+							margin="{Boolean}true">
+						<items jcr:primaryType="nt:unstructured">
+							<columns
+									jcr:primaryType="nt:unstructured"
+									sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+									margin="{Boolean}true">
+								<items jcr:primaryType="nt:unstructured">
+									<column
+											jcr:primaryType="nt:unstructured"
+											sling:resourceType="granite/ui/components/coral/foundation/container">
+										<items jcr:primaryType="nt:unstructured">
+											<panels
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/form/select"
+													class="cq-dialog-dropdown-showhide"
+													cq-dialog-dropdown-showhide-target=".panel-layout-hide-show"
+													fieldLabel="Select Number of columns"
+													name="./columns">
+												<items jcr:primaryType="nt:unstructured">
+													<fullWidthLayout
+															jcr:primaryType="nt:unstructured"
+															text="Full Width"
+															value="0"/>
+													<oneLayout
+															jcr:primaryType="nt:unstructured"
+															text="1 Column"
+															value="1"/>
+													<twoLayout
+															jcr:primaryType="nt:unstructured"
+															text="2 Column"
+															value="2"/>
+													<threeLayout
+															jcr:primaryType="nt:unstructured"
+															text="3 Column"
+															value="3"/>
+													<fourLayout
+															jcr:primaryType="nt:unstructured"
+															text="4 Column"
+															value="4"/>
+												</items>
+											</panels>
+											<twopanelcontainer
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container"
+													class="hide panel-layout-hide-show twoColumns"
+													showhidetargetvalue="2">
+												<items jcr:primaryType="nt:unstructured">
+													<twoColumnPanel
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+															class="cmp-dialog cmp-dialog__two-columns"
+															name="./twopanelradioselect"
+															text="Select Desktop Panel Columns">
+														<items jcr:primaryType="nt:unstructured">
+															<firstLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="1*11"
+																	value="1,11"/>
+															<secondLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="2*10"
+																	value="2,10"/>
+															<thirdLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="3*9"
+																	value="3,9"/>
+															<fourLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="4*8"
+																	value="4,8"/>
+															<fiveLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="5*7"
+																	value="5,7"/>
+															<sixLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	checked="{Boolean}true"
+																	text="6*6 (Default)"
+																	value="6,6"/>
+															<sevenLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="7*5"
+																	value="7,5"/>
+															<eightLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="8*4"
+																	value="8,4"/>
+															<nineLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="9*3"
+																	value="9,3"/>
+															<tenLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="10*2"
+																	value="10,2"/>
+															<elevenLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="11*1"
+																	value="11,1"/>
+														</items>
+													</twoColumnPanel>
+												</items>
+											</twopanelcontainer>
+											<threepanelcontainer
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container"
+													class="hide panel-layout-hide-show threeColumns"
+													showhidetargetvalue="3">
+												<items jcr:primaryType="nt:unstructured">
+													<threeColumnPanel
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+															name="./threepanelradioselect"
+															text="Select Panel Columns">
+														<items jcr:primaryType="nt:unstructured">
+															<firstLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="3*3*6"
+																	value="3,3,6"/>
+															<secondLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	checked="{Boolean}true"
+																	text="4*4*4 (Default)"
+																	value="4,4,4"/>
+															<thirdLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="3*6*3"
+																	value="3,6,3"/>
+															<fourLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	text="6*3*3"
+																	value="6,3,3"/>
+														</items>
+													</threeColumnPanel>
+												</items>
+											</threepanelcontainer>
+											<fourpanelcontainer
+													jcr:primaryType="nt:unstructured"
+													sling:resourceType="granite/ui/components/foundation/container"
+													class="hide panel-layout-hide-show fourColumns"
+													showhidetargetvalue="4">
+												<items jcr:primaryType="nt:unstructured">
+													<fourColumnPanel
+															jcr:primaryType="nt:unstructured"
+															sling:resourceType="granite/ui/components/foundation/form/radiogroup"
+															name="./fourpanelradioselect"
+															text="Select Panel Columns">
+														<items jcr:primaryType="nt:unstructured">
+															<firstLayout
+																	jcr:primaryType="nt:unstructured"
+																	sling:resourceType="granite/ui/components/foundation/form/radio"
+																	checked="{Boolean}true"
+																	text="3*3*3*3 (Default)"
+																	value="3,3,3,3"/>
+														</items>
+													</fourColumnPanel>
+												</items>
+											</fourpanelcontainer>
+										</items>
+									</column>
+								</items>
+							</columns>
+						</items>
+					</configurePanel>
+				</items>
+			</tabs>
+		</items>
+	</content>
+</jcr:root>

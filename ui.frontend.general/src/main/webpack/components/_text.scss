@@ -1,0 +1,23 @@
+.aem {
+    .thin-text, .thin-text p, .thin-text h1, .thin-text h2, .thin-text h3, .thin-text h4, .thin-text h5, .thin-text h6 {
+        font-weight: 100;
+    }
+    .light-text, .light-text p, .light-text h1, .light-text h2, .light-text h3, .light-text h4, .light-text h5, .light-text h6 {
+        font-weight: 300;
+    }
+    .regular-text, .regular-text p, .regular-text h1, .regular-text h2, .regular-text h3, .regular-text h4, .regular-text h5, .regular-text h6 {
+        font-weight: 400;
+    }
+    .medium-text, .medium-text p, .medium-text a,.medium-text h1, .medium-text h2, .medium-text h3, .medium-text h4, .medium-text h5, .medium-text h6 {
+            font-weight: 500;
+        }
+    .semibold-text, .semibold-text p, .semibold-text h1, .semibold-text h2, .semibold-text h3, .semibold-text h4, .semibold-text h5, .semibold-text h6 {
+        font-weight: 600;
+    }
+    .bold-text, .bold-text p, .bold-text h1, .bold-text h2, .bold-text h3, .bold-text h4, .bold-text h5, .bold-text h6 {
+        font-weight: 700;
+    }
+    .extrabold-text, .extrabold-text a, .extrabold-text p, .extrabold-text h1, .extrabold-text h2, .extrabold-text h3, .extrabold-text h4, .extrabold-text h5, .extrabold-text h6 {
+            font-weight: 800;
+        }
+}

@@ -1,0 +1,11 @@
+{
+  "operation": "add",
+  "aces": [
+    "type=allow;privileges=jcr:read;path=/apps/wholesale",
+	"type=allow;privileges=jcr:read;path=/apps/wholesale",
+	"type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/dam",
+	"type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/wholesale"
+  ],
+  "principalName": "wholesale/wholesale-service-user",
+  "ensure-immediately": "true"
+}

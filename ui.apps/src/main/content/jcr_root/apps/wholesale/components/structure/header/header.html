@@ -1,0 +1,118 @@
+<sly data-sly-test="${wcmmode.edit}">
+	<h5>Header component: Edit this component</h5> 
+</sly>
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+	<sly data-sly-call="${clientlib.all @ categories='wholesale.components.header'}"></sly>
+</sly>
+<sly data-sly-use.model="com.dish.wholesale.core.models.HeaderModel"></sly>
+<div id="header-aem">
+	<div id="left-nav" class="left-nav d-none position-relative">
+		<div class="position-fixed">
+			<div class="logo pt-5 pb-5" onclick="goHome()">
+				<img class="mt-1" src="/etc.clientlibs/wholesale/clientlibs/clientlib-site/resources/assets/graphical-elements/logos/wi-logo-dish-wireless.svg" alt="logo" />
+			</div>
+			<nav>
+				<sly data-sly-test.hashMap="${model.data}" data-sly-unwrap>
+					<ul class="pt-4" data-sly-list.keyName="${hashMap}">
+						<sly data-sly-test="${keyName == 'headerItems'}">
+							<sly data-sly-list.head="${hashMap[keyName]}" data-sly-unwrap>
+								<li data-sly-test="${keyName}">
+									<a x-cq-linkchecker="skip" class="d-block pl-3 pt-2 pb-2" href="${head.pageUrl @ context='uri'}"> 
+										<span class="d-inline-block font-weight-bold">${head.pageLabel @ context='html'}</span> 
+									</a>
+								</li>
+							</sly>
+						</sly>
+					</ul>
+				</sly>
+			</nav>
+		</div>
+	</div>
+	<div id="top-nav" class="bottom-layer">
+		<div class="position-sticky top-layer">
+			<div id="menu-button" class="ml-1 mt-1 float-left d-lg-none">
+				<div id="burger-menu" style="display: block;">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div id="mobile-logo" class="logo d-xs-block d-lg-none position-relative text-center">
+				<img src="/etc.clientlibs/wholesale/clientlibs/clientlib-site/resources/assets/graphical-elements/logos/wi-logo-dish-wireless.svg" alt="logo" onclick="goHome()"/>
+			</div>
+			<nav class="d-none d-lg-block">
+				<sly data-sly-test.hashMap="${model.data}" data-sly-unwrap>
+					<sly data-sly-list.keyName="${hashMap}" data-sly-unwrap>
+						<sly data-sly-test="${keyName == 'secondaryHeaderItems'}">
+							<div class="secondary-nav" data-sly-test="${hashMap[keyName].size != 0}">
+								<ul>
+									<sly data-sly-list.head="${hashMap[keyName]}" data-sly-unwrap>
+										<li data-sly-test="${keyName}">
+											<a x-cq-linkchecker="skip" class="d-block" href="${head.pageUrl @ context='uri'}">
+												<span class="d-inline-block font-weight-bold">${head.pageLabel @ context='html'}</span> 
+											</a>
+										</li>
+									</sly>
+								</ul>
+							</div>
+						</sly>
+					</sly>
+				</sly>
+				<div class="primary-nav">
+					<div id="desktop-logo" class="logo">
+						<a href="/"><img src="/etc.clientlibs/wholesale/clientlibs/clientlib-site/resources/assets/graphical-elements/logos/wi-logo-dish-wireless.svg" alt="logo" /></a>
+					</div>
+					<div data-sly-test.hashMap="${model.data}" data-sly-unwrap>
+						<ul data-sly-list.keyName="${hashMap}">
+							<sly data-sly-test="${keyName == 'headerItems'}">
+								<sly data-sly-list.head="${hashMap[keyName]}" data-sly-unwrap>
+									<li data-sly-test="${keyName}">
+										<a x-cq-linkchecker="skip" class="d-block" href="${head.pageUrl @ context='uri'}">
+											<span class="d-inline-block font-weight-bold">${head.pageLabel @ context='html'}</span>
+										</a>
+									</li>
+								</sly>
+							</sly>
+						</ul>
+					</div>
+					<sly data-sly-resource="${'wholesale-search' @ resourceType='wholesale/components/search', decoration=true}"></sly>
+					<div class="access-panel-icon">
+						<div class="search-toggle">
+							<i class="search-toggle__icon" data-cmp-hook-search="icon"></i>
+						</div>
+						<svg id="kb-menu" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-three-dots-vertical d-none" viewBox="0 0 16 16" type="button" onclick="showDiv()">
+							<path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+						</svg>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+	</div>
+	<div class="popup d-none">
+		<div class="text-btns">
+			<span class="button-text">Text Size</span> <span class="text-btn">
+				<button class="button-view" id="decreaseText" type="button" onclick="decreaseFontSize()">
+					<span class="screen-reader">increase font size</span>
+					<i class="fa-solid fa-minus"></i>
+				</button>
+				<button class="button-view" id="increaseText" type="button" onclick="increaseFontSize()">
+					<span class="screen-reader">decrease font size</span>
+					<i class="fa-solid fa-plus"></i>
+				</button>
+			</span>
+		</div>
+		<div class="contrast-btns contrast">
+			<span class="button-text">Contrast</span> <span class="contrast-btn"> &nbsp;
+				<button class="button-view" id="decreaseContrast" type="button" style="filter:contrast(100%);" onclick="decreaseContrastValue('b', -5)">
+					<span class="screen-reader">decrease contrast</span>
+					<i class="fa-solid  fa-minus"></i></button>
+				<button class="button-view" id="increaseContrast" type="button" style="filter:contrast(100%);" onclick="increaseContrastValue('b', 5)">
+					<span class="screen-reader">increase contrast</span>
+					<i class="fa-solid  fa-plus"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+	<div id="top-nav__spacer"></div>
+</div>

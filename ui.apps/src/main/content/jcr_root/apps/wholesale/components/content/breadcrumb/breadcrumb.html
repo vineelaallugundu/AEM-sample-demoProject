@@ -1,0 +1,11 @@
+<sly data-sly-use.breadcrumb="com.dish.wholesale.core.models.BreadcrumbModel"></sly>
+<div data-sly-list.element="${breadcrumb.data}">
+	<div class="breadcrumb-item">
+		<a href="${element.path}.html">${element.title || element.navigationTitle || element.name}</a>
+	</div>
+</div>
+
+
+
+
+

@@ -1,0 +1,14 @@
+{
+"details":"",
+"name":"pubsync",
+"queueProviderFactory.target":"(name=jobQueue)",
+"allowed.roots":["/content/usergenerated/content/sites/feedbacks"],
+"serviceName":"",
+"enabled":"true",
+"priorityQueues":[""],
+"packageBuilder.target":"(name=default)",
+"title":"pubsync",
+"log.level":"info",
+"requestAuthorizationStrategy.target":"(name=default)",
+"triggers.target":"(name=pubsync-trigger)"
+}

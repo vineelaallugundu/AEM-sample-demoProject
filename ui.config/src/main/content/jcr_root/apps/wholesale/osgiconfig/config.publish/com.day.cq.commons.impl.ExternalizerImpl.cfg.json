@@ -1,0 +1,6 @@
+{
+  "externalizer.domains" : ["local http://localhost:4502","author http://localhost:4502","publish http://localhost:4503"],
+  "externalizer.contextpath":"",
+  "externalizer.host":"",
+  "externalizer.encodedpath":"false"
+}

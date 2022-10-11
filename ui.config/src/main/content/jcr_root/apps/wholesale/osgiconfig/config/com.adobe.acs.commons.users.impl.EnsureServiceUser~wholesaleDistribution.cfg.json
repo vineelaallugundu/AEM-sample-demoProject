@@ -1,0 +1,9 @@
+{
+  "operation": "add",
+  "aces": [
+	"type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/usergenerated",
+	"type=allow;privileges=jcr:read,jcr:all,rep:write;path=/content/wholesale"
+  ],
+  "principalName": "distributionservice",
+  "ensure-immediately": "true"
+}

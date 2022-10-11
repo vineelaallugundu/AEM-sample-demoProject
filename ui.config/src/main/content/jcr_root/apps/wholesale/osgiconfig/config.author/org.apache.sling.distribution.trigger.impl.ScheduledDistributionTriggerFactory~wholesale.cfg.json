@@ -1,0 +1,7 @@
+{
+"name":"pubsync-trigger",
+"serviceName":"distributionservice",
+"action":"PULL",
+"path":"/content/usergenerated/content/sites/feedbacks",
+"seconds":"15"
+}

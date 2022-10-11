@@ -1,0 +1,20 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+
+    <div class="search-page">
+        <div id="nosearchtext" class="no-results-header"></div>
+        <p id="nosearchpara" style="margin-left: 27px; margin-bottom: 15px;"></p>
+        <div id="searchtext" class="no-results-header"></div>
+        <p id="searchcount" style="margin-left: 315px; margin-bottom: 15px;"></p>
+        <div class="result-container">
+            <div id="nosearchresultsubstitute"></div>
+            <div class="pagination"></div>
+            <div id="resultsview" role="alert"></div>
+        </div>
+    </div>
+	</br></br>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="modal" id="wait"></div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"/>
+</sly>

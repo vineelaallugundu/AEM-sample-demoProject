@@ -1,0 +1,189 @@
+/* converting this CSS to SCSS, please check on the respective SCSS file*/
+
+/* 
+.top-hero-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 350px;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  align-content: center;
+  justify-content: center;
+}
+.top-hero-section .hero-image-div {
+  grid-area: 1/1/2/2;
+}
+.top-hero-section .hero-overlay-div {
+  grid-area: 1/1/2/2;
+}
+.top-hero-section .hero-text-div {
+  grid-area: 1/1/2/2;
+}
+
+.hero-image {
+  display: grid;
+  min-width: 350px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay-div {
+  display: grid;
+  max-width: 100%;
+  background: black;
+  background: linear-gradient(60deg, rgba(0, 0, 0, 0.7777485994) 30%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero-text-div {
+  display: grid;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.hero-h1-text {
+  font-size: calc(10pt + 0.15vw);
+  letter-spacing: 0.05em;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: white;
+}
+
+.hero-body-text {
+  font-size: calc(10pt + 0.15vw);
+  margin-top: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+
+.hero-body-text:hover {
+  color: white;
+}
+
+.hero-body-text:visited {
+  color: white;
+}
+
+.hero-body-text:active {
+  color: white;
+}
+
+@media all and (min-width: 1025px) {
+  .centered p {
+    width: 55%;
+  }
+}
+
+
+@media all and (min-width: 1025px) {
+  .p {
+    line-height: 1.5rem;
+  }
+}
+
+.hero-text-div .p {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 55%;
+}
+
+.hero-text-div .innerTxt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.local-white {
+  color: var(--color-marshmallow) !important;
+}
+ .pad-t_8 {
+  padding-top: 8px !important;
+}
+
+  .pad-t_32 {
+  padding-top: 32px !important;
+}
+.pad-b_32 {
+  padding-bottom: 32px !important;
+}
+.text-20 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+
+.centered {
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+
+.extraBold {
+    font-weight: 800;
+}
+
+
+
+.hero-text-div .text-hero {
+  font-size: 2.75rem;
+  line-height: 2.6875rem;
+  font-weight: 800;
+}
+@media all and (min-width: 1025px) {
+  .hero-text-div .text-hero {
+    font-size: 5.875rem;
+    line-height: 5.625rem;
+  }
+}                    
+.white-paper-text_wrapper p {
+  font-size: 12px;
+}
+
+.hero-image {
+  display: grid;
+  min-width: 350px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay-div {
+  display: grid;
+  max-width: 100%;
+  background: black;
+  background: linear-gradient(60deg, rgba(0, 0, 0, 0.7777485994) 30%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero-text-div {
+  display: grid;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.hero-h1-text {
+  font-size: calc(10pt + 0.15vw);
+  letter-spacing: 0.05em;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: white;
+}
+
+.hero-body-text {
+  font-size: calc(10pt + 0.15vw);
+  margin-top: 0.5em;
+  color: white;
+  text-decoration: none;
+}
+.hero-body-text:hover {
+  color: white;
+}
+.hero-body-text:visited {
+  color: white;
+}
+.hero-body-text:active {
+  color: white;
+}
+ */

@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+    .container {
+        max-width: inherit;
+    }
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: inherit;
+    }
+}
+
+.container {
+    width: inherit;
+    padding-right: inherit;
+    padding-left: inherit;
+    margin-right: inherit;
+    margin-left: inherit;
+}

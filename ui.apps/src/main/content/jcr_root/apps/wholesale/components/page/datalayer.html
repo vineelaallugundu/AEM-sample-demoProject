@@ -1,0 +1,53 @@
+<template data-sly-template.datalayer>
+    <sly data-sly-use.dataLayer="com.dish.wholesale.core.models.AnalyticsPageObject">
+        <script type="text/javascript">
+
+        window.onload = function getPageLoadTime(){
+            const loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+            window.adobeDataLayer = window.adobeDataLayer || [];
+            window.adobeDataLayer.push({
+				event: 'screen_load',
+					web: {
+					webPageDetails: {
+						pageViews: {
+							value: 1
+						},
+						name: "${dataLayer.pageName @ context='scriptString'}",
+						domain: window.location.hostname,
+						siteSection:"${dataLayer.siteSection @ context='scriptString'}",
+						loadTime: loadTime,
+						url: window.location.href.split(/[?#]/)[0],
+					}
+				}
+
+			});
+			console.log("name-"+"${dataLayer.pageName @ context='scriptString'}"+", "+"siteSection-"+"${dataLayer.siteSection @ context='scriptString'}"+", "+"loadTime-"+ loadTime+", "+"domain-"+ window.location.hostname+", "+"url-"+window.location.href.split(/[?#]/)[0]);			
+			$("a").click(function(){
+				var alt;
+				if($(this).find("img").length){
+					alt = $(this).children().attr("alt");
+                }
+                var name =  $(this).text().trim() ? $(this).text().trim() : alt;
+				if (this.hasAttribute("href")){
+					window.adobeDataLayer.push({
+						event: 'ui_click',
+						web:{
+							 webInteraction: {
+							   linkClicks: {
+								  value: 1
+								},
+								name: name,
+								type: 'other',
+							   
+							}
+						}
+					}); 
+					console.log("Name :- " + name + ", Link :- " + $(this).attr("href"));
+				}
+            });
+        }
+
+
+        </script>
+    </sly>
+</template>

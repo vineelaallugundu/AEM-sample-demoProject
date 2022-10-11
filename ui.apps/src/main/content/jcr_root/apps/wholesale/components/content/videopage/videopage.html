@@ -1,0 +1,38 @@
+
+<div class="video-page-cmp">
+    <sly data-sly-test.videoparam="${request.requestParameterMap['id'][0].toString}">
+        <sly data-sly-use.videopagemodel="${'com.dish.wholesale.core.models.VideoPageModel' @videoid=videoparam}"/>
+    </sly>
+    <div class="cmp-spacing_64"><div class="spacer"></div></div>
+    <div class="rail-system one-column-layout ${wcmmode.edit || wcmmode.design ? 'authoring-mode' : ''}">
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class='railing'>
+                    <sly data-sly-test="${!wcmmode.edit}">
+                        <sly data-sly-test.vidMissing="${!videopagemodel.value}">
+                            <script>
+                                var url = window.location.origin;
+                                console.log(url+"/404")
+                                window.open(url+"/404", '_self');
+                            </script>
+                        </sly>
+                    </sly>
+                    <sly data-sly-test.vidMissing="${videopagemodel.value}">
+                        <div id="${component.id}__modal">
+                            <div tabindex="-1" role="dialog" aria-labelledby="dialog1_label">
+                                <div tabindex="0">
+                                    <div style="max-width:900px;margin:auto;">
+                                        <video id="playback-video" width="100%" controls="" autoplay muted poster="${'/etc.clientlibs/wholesale/clientlibs/clientlib-site/resources/assets/graphical-elements/custom-components/wi-graphic-video-poster.png'}">
+                                            <source src="${videopagemodel.value}" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </sly>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cmp-spacing_32"><div class="spacer"></div></div>
+</div>

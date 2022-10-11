@@ -1,0 +1,28 @@
+{
+	"jump-nav": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/jump-nav",
+	   "menulinks":{
+	      "jcr:primaryType":"nt:unstructured",
+	      "item0":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "label":"Test",
+	         "id":"test"
+	      },
+	      "item1":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "label":"bbb",
+	         "id":"B"
+	      },
+	      "item2":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "label":"ccc",
+	         "id":"C"
+	      }
+	   }
+	},
+	"jumpnav-empty": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/jump-nav"
+	}
+}

@@ -1,0 +1,30 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html">
+
+    <!-- Form container starts -->
+    <form method="POST" novalidate="" class="wholsesale-wireless-form ${properties.submitType == 'cookie' ? 'cookie-consent' : '' @ context='attribute'}">
+        <sly data-sly-resource="${'par' @ resourceType='/libs/wcm/foundation/components/responsivegrid'}"></sly>
+    </form>
+    <!-- Form container ends -->
+    <!-- Success message starts -->
+    <div class="form-success d-none">
+        <div class="text"> ${properties.formSuccessTitle}
+            <div class="form-success-message">
+                <p>${properties.formSuccessMessage}</p>
+            </div>
+        </div>
+    </div>
+    <!-- Success message ends -->
+    <!-- Failure Message starts -->
+    <div class="form-failure d-none">
+        <div class="text"> ${properties.formFailureTitle}
+            <div class="form-failure-message">
+                <p>${properties.formFailureMessage}</p>
+            </div>
+        </div>
+    </div>
+    <!-- Failure Messgae ends -->
+
+    <sly data-sly-call="${template.placeholder @ isEmpty=true}"></sly>
+    <sly data-sly-call="${clientlib.all @ categories='wholesale.components.form'}"></sly>
+</sly>

@@ -1,0 +1,169 @@
+
+@mixin transition-five-hundred {
+    -webkit-transition: 500ms opacity ease;
+    -moz-transition: 500ms opacity ease;
+    -ms-transition: 500ms opacity ease;
+    -o-transition: 500ms opacity ease;
+    transition: 500ms opacity ease;
+}
+@mixin translate-fifty {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.aem {
+    .modal {
+        display: none;
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -250px;
+            margin-left: -450px;
+            width: 900px;
+            height: 500px;
+        }
+    }
+    .dish-modal {
+        position: fixed;
+		z-index: 9999;
+		top: 50%;
+		left: 50%;
+		opacity: 0;
+		width: 90%;
+		@include transition-five-hundred();
+        @include translate-fifty();
+		background: #fff;
+		display: none;
+
+        &--video {
+            @extend .dish-modal;
+
+            .custom-menu {
+                position: absolute;
+                bottom: -40px;
+                width: 100%;
+                text-align: right;
+                background-color: transparentize($color-midnight, .5);
+                button {
+                    background: transparent;
+                    color: #ffffff;
+                    font-weight: bolder;
+                    text-shadow: 2px 1px 2px #000;
+                    border: none;
+                    cursor: pointer;
+                }
+                .fa {
+                    font-size: 15px;
+                }
+                &__share-button {
+                    height: 40px !important;
+                    width: 40px !important;
+                    border-radius: 50%;
+                    top: 370px !important;
+                    left: 860px;
+                    z-index: 1;
+                }
+            }
+            .share-modal {
+                &__close {
+                    font-size: 38px;
+                    line-height: 12px;
+                    position: absolute;
+                    padding: 11px 7px 7px;
+                    cursor: pointer;
+                    color: #fff;
+                    border: 0;
+                    outline: none;
+                    background: #e51645 !important;
+                    right: -20px !important;
+                    height: 40px !important;
+                    width: 40px !important;
+                    border-radius: 50%;
+                    top: -20px !important;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    .dish-close {
+                font-size: 38px;
+                line-height: 12px;
+                position: absolute;
+                padding: 11px 7px 7px;
+                cursor: pointer;
+                color: #fff;
+                border: 0;
+                outline: none;
+                background: #e51645;
+                top: -20px;
+                right: -20px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                z-index: 1;
+                transition: all 1s ease;
+                &:disabled {
+                    color: $color-midnight;
+                    background: $color-smoke;
+                    z-index: 0;
+                    top: -10px;
+                    right: -10px;
+                }
+    }
+}
+
+// old css
+.aem {
+	.dish-overlay {
+		position: fixed;
+		z-index: 9998;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		@include transition-five-hundred();
+		background: rgba(0,0,0,0.65);
+	}
+	.dish-overlay.fadeIt {
+		@include transition-five-hundred();
+		display: block;
+		opacity: 0;
+	}
+	.dish-overlay.fadeIt.model-open {
+		top: 0;
+		@include transition-five-hundred();
+		opacity: 1;
+	}
+	
+	.video-responsive {
+		overflow: hidden;
+		position: relative;
+        height: auto;
+        background-color: $color-midnight;
+        max-height: 500px;
+		-webkit-box-shadow: -1px 2px 19px 2px rgba(0,0,0,.75);
+		box-shadow: -1px 2px 19px 2px rgba(0,0,0,.75);
+
+	}
+	>.dish-modal.fadeIt.model-open {
+		opacity: 1;
+		display: block;
+	}
+	video {
+		object-fit: contain;
+        max-height: 510px;
+        background-color: black;
+	}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	.aem {
+		.dish-modal {
+			top: 55%;
+		}
+	}
+}

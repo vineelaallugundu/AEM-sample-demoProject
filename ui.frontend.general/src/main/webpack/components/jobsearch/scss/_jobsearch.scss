@@ -1,0 +1,173 @@
+/* Consider moving to site.scss file. */
+.cmp-job-search {
+	.height {
+		height: 100vh;
+	}
+	.form {
+		position: relative;
+		margin-left: 10%;
+		.fa-search {
+			position: absolute;
+			top: 3px;
+			bottom: 10px;
+			left: 0px;
+			color: #9ca3af;
+			margin-left: -170px;
+			cursor: pointer;
+		}
+		span {
+			position: absolute;
+			right: 17px;
+			top: 13px;
+			padding: 2px;
+			border-left: 1px solid #d1d5db;
+		}
+	}
+	.left-pan {
+		padding-left: 1px;
+		i {
+			padding-left: 1px;
+		}
+	}
+	.form-input {
+		height: 55px;
+		text-indent: 3px;
+		border-radius: 10px;
+		color: blue;
+		margin: 10px;
+	}
+	.fas {
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		line-height: 0.6;
+		float: right;
+		position: relative;
+		right: 150px;
+		bottom: 35px;
+		cursor: pointer;
+	}
+	.no-data {
+		margin: 50px;
+		margin-left: 280px;
+	}
+	.form-control {
+		display: block;
+		width: 80%;
+		height: calc(1.75em + .75rem + 2px);
+		padding: .375rem .75rem;
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1.5;
+		color: #495057;
+		background-color: #fff;
+		background-clip: padding-box;
+		border: 1px solid #ced4da;
+		border-radius: .25rem;
+		transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	}
+	.jobs-form {
+		>div {
+			margin: auto;
+			max-width: 700px;
+			width: 100%;
+		}
+	}
+	.jobs-container {
+		border: 2px solid #ffffff;
+		border-radius: 10px;
+		box-shadow: -2px 2px 8px #bcbcbc;
+	}
+	.items-list {
+		border-bottom: 2px solid #bcbcbc;
+		padding: 30px 40px;
+		position: relative;
+		bottom: 10px;
+		&:nth-last-child(1) {
+			border-bottom: none;
+		}
+	}
+	.item-title {
+		font-weight: 600 !important;
+		font-size: 18px;
+	}
+	.location {
+		font-size: 14px;
+		margin-top: -3px;
+	}
+	.apply {
+		float: right;
+		position: relative;
+		bottom: 45px;
+		color: #fff !important;
+	}
+	.buttons {
+		a {
+			text-decoration: underline;
+			color: blue;
+			position: relative;
+			left: 540px;
+			top: 5px;
+			margin: 6px;
+			cursor: pointer;
+			z-index: 1;
+		}
+	}
+	.disabled {
+		pointer-events: none;
+		color: #bcbcbc !important;
+	}
+	.pagination {
+		display: flex;
+		justify-content: flex-end;
+		position: relative;
+		left: 30px;
+		a {
+			margin-right: 10px;
+			margin-top: 10px;
+			padding: 5px 10px 0px 0px;
+			cursor: pointer;
+			display: inline-block;
+			text-align: center;
+			border-right: 1px solid #000;
+			&:nth-last-child(1) {
+				border-right: none;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+	.modal {
+		display: none;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background: rgba( 255, 255, 255, .8 ) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+	}
+}
+body.loading {
+	.modal {
+		overflow: hidden;
+		display: block;
+	}
+}
+@media (max-width: 992px) {
+	.cmp-job-search {
+		.buttons {
+			a {
+				left: 230px;
+			}
+		}
+		.item-title {
+			width: 300px;
+			padding-top: 1px;
+		}
+	}
+}

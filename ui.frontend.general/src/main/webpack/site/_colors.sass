@@ -1,0 +1,154 @@
+//Color CSS Variables
+
+*
+	--font-primary: #{$font-campfire}
+
+	/* Neutral */
+	--color-midnight: #{$color-midnight}
+	--color-coal: #{$color-coal}
+	--color-charcoal: #{$color-charcoal}
+	--color-cinder: #{$color-cinder}
+	--color-ash: #{$color-ash}
+	--color-smoke: #{$color-smoke}
+	--color-marshmallow: #{$color-marshmallow}
+
+	/* Neutral Transparent */
+	--color-transparent-midnight: #{$color-transparent-midnight}
+	--color-transparent-coal: #{$color-transparent-coal}
+	--color-transparent-charcoal: #{$color-transparent-charcoal}
+	--color-transparent-cinder: #{$color-transparent-cinder}
+	--color-transparent-ash: #{$color-transparent-ash}
+	--color-transparent-smoke: #{$color-transparent-smoke}
+	--color-transparent-marshmallow: #{$color-transparent-marshmallow}
+
+	/* DISH */
+	--color-brand-dish-red: #{$color-brand-dish-red}
+	--color-brand-dish-ember: #{$color-brand-dish-ember}
+
+	/* Sling */
+	--color-brand-sling-blueberry: #{$color-brand-sling-blueberry}
+	--color-brand-sling-cookie-monster: #{$color-brand-sling-cookie-monster}
+	--color-brand-sling-rock-candy: #{$color-brand-sling-rock-candy}
+	--color-brand-sling-tangerine: #{$color-brand-sling-tangerine}
+	--color-brand-sling-mac-and-cheese: #{$color-brand-sling-mac-and-cheese}
+
+	/* Other */
+	--color-steam: #f5f5f6
+	--color-vapor: #e6e6e6
+
+.day
+	--color-neutral-base: #{$color-marshmallow}
+	--color-neutral-base-flipped: #{$color-smoke}
+	--color-neutral-soft: #{$color-ash}
+	--color-neutral-inactive: #{$color-cinder}
+	--color-neutral-hover: #{$color-charcoal}
+	--color-neutral-active: #{$color-coal}
+	--color-neutral-content: #{$color-coal}
+	--color-status-success: #{$color-success-day}
+	--color-status-error: #{$color-error-day}
+	--color-status-info: #{$color-info-day}
+	--color-status-alert: #{$color-alert-day}
+	--filter-input-hover: brightness(0.96)
+	&.flipped
+		--color-neutral-base: #{$color-smoke}
+		--color-neutral-base-flipped: #{$color-marshmallow}
+.night
+	--color-neutral-base: #{$color-coal}
+	--color-neutral-base-flipped: #{$color-charcoal}
+	--color-neutral-soft: #{$color-cinder}
+	--color-neutral-inactive: #{$color-ash}
+	--color-neutral-hover: #{$color-smoke}
+	--color-neutral-active: #{$color-marshmallow}
+	--color-neutral-content: #{$color-marshmallow}
+	--color-status-success: #{$color-success-night}
+	--color-status-error: #{$color-error-night}
+	--color-status-info: #{$color-info-night}
+	--color-status-alert: #{$color-alert-night}
+	--filter-input-hover: brightness(1.8)
+	&.flipped
+		--color-neutral-base: #{$color-charcoal}
+		--color-neutral-base-flipped: #{$color-coal}
+
+/* Dynamic Mode based on User UI */
+
+.dynamic-modes
+	@media (prefers-color-scheme: light) // Set to Campfire Day when User's UI is Light
+		&.day, &.night
+			--color-neutral-base: #{$color-marshmallow}
+			--color-neutral-base-flipped: #{$color-smoke}
+			--color-neutral-soft: #{$color-ash}
+			--color-neutral-inactive: #{$color-cinder}
+			--color-neutral-hover: #{$color-charcoal}
+			--color-neutral-active: #{$color-coal}
+			--color-neutral-content: #{$color-coal}
+			--color-status-success: #{$color-success-day}
+			--color-status-error: #{$color-error-day}
+			--color-status-info: #{$color-info-day}
+			--color-status-alert: #{$color-alert-day}
+			&.flipped
+				--color-neutral-base: #{$color-smoke}
+				--color-neutral-base-flipped: #{$color-marshmallow}
+	@media (prefers-color-scheme: dark) // Set to Campfire Night when User's UI is Dark
+		&.day, &.night
+			--color-neutral-base: #{$color-coal}
+			--color-neutral-base-flipped: #{$color-charcoal}
+			--color-neutral-soft: #{$color-cinder}
+			--color-neutral-inactive: #{$color-ash}
+			--color-neutral-hover: #{$color-smoke}
+			--color-neutral-active: #{$color-marshmallow}
+			--color-neutral-content: #{$color-marshmallow}
+			--color-status-success: #{$color-success-night}
+			--color-status-error: #{$color-error-night}
+			--color-status-info: #{$color-info-night}
+			--color-status-alert: #{$color-alert-night}
+			&.flipped
+				--color-neutral-base: #{$color-charcoal}
+				--color-neutral-base-flipped: #{$color-coal}
+
+// Interaction Colors
+
+@include interaction-color ("*", $color-water-day, $color-water-night)
+
+.aem 
+	.background-midnight 
+		background-color: #{$color-midnight}
+
+	.background-coal 
+		background-color: #{$color-coal}
+
+	.background-charcoal 
+		background-color: #{$color-charcoal}
+
+	.background-cinder 
+		background-color: #{$color-cinder}
+
+	.background-ash 
+		background-color: #{$color-ash}
+
+	.background-smoke 
+		background-color: #{$color-smoke}
+
+	.background-marshmallow 
+		background-color: #{$color-marshmallow}
+
+.aem 
+	.color-midnight 
+		color: #{$color-midnight}
+
+	.color-coal 
+		color: #{$color-coal}
+
+	.color-charcoal 
+		color: #{$color-charcoal}
+
+	.color-cinder 
+		color: #{$color-cinder}
+
+	.color-ash 
+		color: #{$color-ash}
+
+	.color-smoke 
+		color: #{$color-smoke}
+
+	.color-marshmallow 
+		color: #{$color-marshmallow}

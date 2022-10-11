@@ -1,0 +1,14 @@
+{
+"scripts": ["create group wholesale-authors with path /home/groups/wholesale",
+"set ACL for wholesale-authors\nallow jcr:read,rep:write,jcr:versionManagement,jcr:lockManagement on /content/wholesale,/content/experience-fragments/wholesale\nend",
+"create group wholesale-admins with path /home/groups/wholesale",
+"set ACL for wholesale-admins\nallow crx:replicate,jcr:readAccessControl on /content/wholesale,/content/dam/wholesale,/content/experience-fragments/wholesale,/conf/wholesale\nend",
+"create group wholesale-observers with path /home/groups/wholesale",
+"set ACL for wholesale-observers\nallow jcr:read on /content/wholesale,/content/dam/wholesale\nend",
+"add wholesale-authors to group common-authors",
+"add wholesale-admins to group wholesale-authors",
+"create user test-wholesale-author with password Wholesa*e123",
+"add test-wholesale-author to group wholesale-authors",
+"create user test-wholesale-admin with password Wholesa*e123",
+"add test-wholesale-author to group wholesale-admins"]
+}

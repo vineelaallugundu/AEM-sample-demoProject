@@ -1,0 +1,6 @@
+{
+"queue":"",
+"name":"pubsync",
+"agent.target":"(name=pubsync)",
+"drop.invalid.items":"false"
+}

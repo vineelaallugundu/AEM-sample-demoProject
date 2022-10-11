@@ -1,0 +1,7 @@
+{
+"deep":"true",
+"ignoredPathsPatterns":[""],
+"name":"pubsync-trigger",
+"serviceName":"distributionservice",
+"path":"/content/usergenerated/content/sites/feedbacks"
+}

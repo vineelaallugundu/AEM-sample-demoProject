@@ -1,0 +1,21 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.accord="com.dish.wholesale.core.models.AccordionModel">
+
+	<div data-sly-test="${resource.hasChildren}" class="accordiongroup" data-sly-list.head="${accord.data}">
+		<div class="accordion" role="button">
+			<div class="title">
+				<div class="text">
+					${head.title @ context='html'}
+				</div>
+				<div class="icon">
+					<div class="shape-1"></div>
+					<div class="shape-2"></div>
+				</div>
+			</div>
+			<div class="expanded-content">
+				${head.description @ context='html'}
+			</div>
+		</div>
+	</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = !resource.hasChildren}"></sly>
+</sly>

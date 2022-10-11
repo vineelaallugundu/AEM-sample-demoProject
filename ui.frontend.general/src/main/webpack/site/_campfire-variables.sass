@@ -1,0 +1,299 @@
+// Mixins
+@function calculateRem($size)
+	$remSize: calc($size / 16)
+	@return #{$remSize}rem
+
+
+@mixin fontSize($size)
+	font-size: ($size)+px
+	font-size: calculateRem($size)
+
+
+@mixin lineHeightSize($size)
+	line-height: ($size)+px
+	line-height: calculateRem($size)
+
+
+@mixin font($fontsize,$lineheight)
+	@include fontSize($fontsize)
+	@include lineHeightSize($lineheight)
+
+@mixin interval-delay($delay, $count, $duration, $interval)
+	@for $i from 1 through $count
+		&.num-#{$i}
+			transition: all ($duration * 1s) $transition-ease ($interval * $i * 1s) + $delay
+
+@mixin interval-delay-reverse($delay, $count, $duration, $interval)
+	@for $i from 1 through $count
+		&.num-#{$i}
+			transition: all ($duration * 1s) $transition-ease (($interval * abs($i - $count - 1) * 1s) + $delay)
+
+
+	
+// Font Stack Variables
+
+$font-campfire: proximanova, Gotham, Montserrat, Trebuchet, sans-serif
+$font-boost: boostnext, proximanova, Gotham, Montserrat, Trebuchet, sans-serif
+$font-genesis: avosans, proximanova, Gotham, Montserrat, Trebuchet, sans-serif
+
+$font-weight-thin: 100
+$font-weight-regular: 400
+$font-weight-medium: 500
+$font-weight-bold: 700
+$font-weight-extrabold: 800
+$font-weight-black: 900
+
+
+
+// Space Variables
+
+$space-xxs: calculateRem(2)
+$space-xs: calculateRem(4)
+$space-s: calculateRem(8)
+$space-m: calculateRem(16)
+$space-l: calculateRem(32)
+$space-xl: calculateRem(64)
+$space-xxl: calculateRem(128)
+$space-xxxl: calculateRem(256)
+
+
+// Breakpoints Variables
+
+$breakpoint-sm: 768px
+$breakpoint-md: 992px
+$breakpoint-lg: 1440px
+
+
+// Color Variables
+
+/* DISH */
+$color-brand-dish-red: #f01446
+$color-brand-dish-ember: #9d2235
+
+/* Sling */
+$color-brand-sling-blueberry: #001e60
+$color-brand-sling-cookie-monster: #10069f
+$color-brand-sling-rock-candy: #00a3e0
+$color-brand-sling-tangerine: #ff6a13
+$color-brand-sling-mac-and-cheese: #ffa300
+
+/* OnTech */
+$color-brand-ontech: #0015ea
+$color-brand-ontech-river: #0092b8
+$color-brand-ontech-sky: #aed9e6
+$color-brand-ontech-sunset: #e8603a
+$color-brand-ontech-sunrise: #f7d0c4
+
+/* Neutral */
+$color-midnight: #000010
+$color-coal: #171725
+$color-charcoal: #292938
+$color-cinder: #525261
+$color-ash: #c4c4c7
+$color-smoke: #f5f5f6
+$color-marshmallow: #ffffff
+
+$color-transparent-midnight: rgba(0,0,16,.25)
+$color-transparent-coal: rgba(23,23,37,.75)
+$color-transparent-charcoal: rgba(41,41,56,.25)
+$color-transparent-cinder: rgba(82,82,97,.25)
+$color-transparent-ash: rgba(196,196,199,.25)
+$color-transparent-smoke: rgba(245,245,246,.25)
+$color-transparent-marshmallow: rgba(255,255,255,0.25)
+
+/* Primary */
+$color-blaze: #e41932
+$color-water-day: #384AFF
+$color-water-night: #00E7FF
+
+/* Status */
+$color-success-day: #00873f
+$color-alert-day: #eab700
+$color-error-day: #931621
+$color-info-day: #46237a
+$color-success-night: #9DE7BF
+$color-alert-night: #ffe485
+$color-error-night: #f4b4b9
+$color-info-night: #c9b4e9
+
+/* Boost */
+$color-brand-boost-orange-1: #F36C21
+$color-brand-boost-orange-2: #F57E20
+$color-brand-boost-orange-3: #F7901E
+$color-brand-boost-spark: #F25D12
+$color-brand-boost-mid-blue: #0165BC
+
+/* Genesis */
+$color-brand-genesis-moss-day: #34A243
+$color-brand-genesis-moss-night: #33FF93
+
+/* Republic Wireless */
+$color-brand-republic-flame: #e01300
+$color-brand-republic-stream: #abe9ec
+$color-brand-republic-glacier: #00bfc8
+$color-brand-republic-river: #007585
+$color-brand-republic-lake: #0b3244
+
+// Style Tokens
+$shadow-small: 0 calculateRem(5) calculateRem(10) 0 rgba(0,0,0,.22)
+$shadow-large: 0 calculateRem(21) calculateRem(52) calculateRem(-10) rgba(0,0,0,.19)
+
+// Typographic Scale
+
+/* 62 font style */
+
+@mixin t-62 ()
+	@include font(62,64)
+	letter-spacing: -0.54px
+
+
+/* 52 font style */
+
+@mixin t-52 ()
+	@include font(52,56)
+	letter-spacing: -0.45px
+
+
+/* 44 font style */
+
+@mixin t-44 ()
+	@include font(44,50)
+	letter-spacing: -0.38px
+
+
+/* 36 font style */
+
+@mixin t-36 ()
+	@include font(36,40)
+	letter-spacing: -0.3px
+
+
+/* 32 font style */
+
+@mixin t-32 ()
+	@include font(32,36)
+	letter-spacing: -0.2px
+
+
+/* 28 font style */
+
+@mixin t-28 ()
+	@include font(28,32)
+	letter-spacing: -0.2px
+
+
+/* 24 font style */
+
+@mixin t-24 ()
+	@include font(24,28)
+	letter-spacing: -0.1px
+
+
+/* 20 font style */
+
+@mixin t-20 ()
+	@include font(20,24)
+
+
+/* 18 font style */
+
+@mixin t-18 ()
+	@include font(18,24)
+
+
+/* 16 font style */
+
+@mixin t-16 ()
+	@include font(16,21)
+
+
+/* 14 font style */
+
+@mixin t-14 ()
+	@include font(14,19)
+
+
+/* 12 font style */
+
+@mixin t-12 ()
+	@include font(12,17)
+
+
+
+//Motion Variables
+
+$transition-instant: .1s
+$transition-fast: .3s
+$transition-slow: 1s
+$transition-slower: 2s
+$transition-ease: cubic-bezier(0, 0.48, 0.19, 1)
+
+@mixin transition ($attribute, $speed)
+	transition: $attribute $speed $transition-ease
+
+// Keyframe Mixin
+
+@mixin keyframes-animation($name)
+	@-webkit-keyframes #{$name}
+		@content
+	@keyframes #{$name}
+		@content
+
+@mixin prefix-property($name, $value)
+	-webkit-#{$name}: $value
+	#{$name}: $value
+
+
+
+// Interaction Color Mixins
+
+@mixin interaction-color ($brand,$primary-color-day,$primary-color-night,$secondary-color-day : $primary-color-day,$secondary-color-night : $primary-color-night)
+	#{$brand}
+		&.day
+			--primary-color-inactive: #{$primary-color-day}
+			--primary-color-hover: #{darken($primary-color-day, 5%)}
+			--primary-color-active: #{darken($primary-color-day, 15%)}
+			--secondary-color-inactive: #{$secondary-color-day}
+			--secondary-color-hover: #{darken($secondary-color-day, 5%)}
+			--secondary-color-active: #{darken($secondary-color-day, 15%)}
+		&.night
+			--primary-color-inactive: #{$primary-color-night}
+			--primary-color-hover: #{darken($primary-color-night, 5%)}
+			--primary-color-active: #{darken($primary-color-night, 15%)}
+			--secondary-color-inactive: #{$secondary-color-night}
+			--secondary-color-hover: #{darken($secondary-color-night, 5%)}
+			--secondary-color-active: #{darken($secondary-color-night, 15%)}
+
+
+// Focus Mixins
+
+@mixin focus ($border-radius)
+	&:focus
+		// Remove Browser Styling
+		border: none
+		-webkit-appearance: none
+		-moz-appearance: none
+		outline: none
+		-moz-user-select: none
+		-khtml-user-select: none
+		-webkit-user-select: none
+		-ms-user-select: none
+		user-select: none
+		background-color: rgba(0,0,0,0)
+		// End Remove Browser Styling
+		&:before
+			display: block
+			content: ""
+			position: absolute
+			top: -4px
+			right: -4px
+			bottom: -4px
+			left: -4px
+			border-radius: $border-radius + 4px
+			border: solid 2px $color-water-night
+			pointer-events: none
+			animation: 1s focus-pulse ease-in-out infinite alternate
+
+@mixin frost()
+	backdrop-filter: blur(7px) saturate(1)
+	background-color: transparentize($color-coal, .5)

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/wholesale/clientlibs"/>
+    <filter root="/apps/wholesale/components"/>
+    <filter root="/apps/wholesale/proxy"/>
+    <filter root="/apps/wholesale/i18n"/>
+    <filter root="/apps/eaem-touchui-min-max-items-multifield"/>
+    <filter root="/apps/dam/gui"/>
+    <filter root="/apps/dam/gui/content/assets"/>
+</workspaceFilter>

@@ -1,0 +1,14 @@
+<sly data-sly-use.image="com.dish.wholesale.core.models.ImageModel"
+     data-sly-use.template="core/wcm/components/commons/v1/templates.html">
+    <div class="cmp-image" data-sly-test="${image.fileReference}">
+        <a href="${image.imageLink}" rel="noopener noreferrer" target="_blank">
+            <img loading="lazy" 
+                src="${image.fileReference ? image.fileReference : '/etc.clientlibs/wholesale/clientlibs/clientlib-site/resources/assets/graphical-elements/custom-components/wi-graphic-video-poster.png'}" 
+                alt="${image.altText}" 
+                width="${image.width}" 
+                class="${image.alignment}" 
+                onerror="if (imageFallback) { imageFallback(this) } else { setTimeout(() => imageFallback(this), 1000) }"/>
+        </a>
+    </div>
+    <sly data-sly-call="${template.placeholder @ isEmpty=!hasContent}"></sly>
+</sly>

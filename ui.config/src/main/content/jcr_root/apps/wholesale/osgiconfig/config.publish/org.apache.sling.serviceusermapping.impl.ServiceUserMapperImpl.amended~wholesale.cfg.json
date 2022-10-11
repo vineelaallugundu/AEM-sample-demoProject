@@ -1,0 +1,4 @@
+{
+"service.ranking":"0",
+"user.mapping":["org.apache.sling.distribution.core:distributionservice=distributionservice"]
+}

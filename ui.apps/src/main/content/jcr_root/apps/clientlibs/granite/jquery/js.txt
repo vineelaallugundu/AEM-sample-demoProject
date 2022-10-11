@@ -1,0 +1,5 @@
+#base=source
+
+jquery-360/jquery-3.6.0.min.js
+browser/browser.js
+migration/htmlPrefilter.js

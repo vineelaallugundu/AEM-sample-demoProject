@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:deviceGroups="[mobile/groups/responsive]"
+        cq:lastModified="{Date}2021-09-15T21:48:40.142Z"
+        cq:lastModifiedBy="benjamin.friske@dish.com"
+        cq:template="/conf/wholesale/settings/wcm/templates/wholesale-page-content"
+        jcr:mixinTypes="[]"
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="wholesale/components/page">
+        <cq:responsive jcr:primaryType="nt:unstructured">
+            <breakpoints jcr:primaryType="nt:unstructured">
+                <phone
+                    jcr:primaryType="nt:unstructured"
+                    title="Smaller Screen"
+                    width="{Long}768"/>
+                <tablet
+                    jcr:primaryType="nt:unstructured"
+                    title="Tablet"
+                    width="{Long}1200"/>
+            </breakpoints>
+        </cq:responsive>
+        <container
+            jcr:lastModified="{Date}2021-09-15T21:32:29.335Z"
+            jcr:lastModifiedBy="benjamin.friske@dish.com"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wholesale/components/container"
+            layout="responsiveGrid">
+            <experiencefragment
+                jcr:created="{Date}2021-09-15T21:34:03.601Z"
+                jcr:createdBy="benjamin.friske@dish.com"
+                jcr:lastModified="{Date}2021-09-15T21:35:05.645Z"
+                jcr:lastModifiedBy="benjamin.friske@dish.com"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
+                fragmentPath="/content/experience-fragments/wholesale/us/en/site/header/master"
+                text="Artboard About Careers About Careers"/>
+            <responsivegrid
+                jcr:created="{Date}2021-09-15T21:34:11.339Z"
+                jcr:createdBy="benjamin.friske@dish.com"
+                jcr:lastModified="{Date}2021-09-15T21:34:11.339Z"
+                jcr:lastModifiedBy="benjamin.friske@dish.com"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="wcm/foundation/components/responsivegrid"
+                editable="{Boolean}true">
+                <cq:responsive jcr:primaryType="nt:unstructured"/>
+            </responsivegrid>
+            <experiencefragment_490596685
+                jcr:created="{Date}2021-09-15T21:34:22.189Z"
+                jcr:createdBy="benjamin.friske@dish.com"
+                jcr:lastModified="{Date}2021-09-15T21:48:40.100Z"
+                jcr:lastModifiedBy="benjamin.friske@dish.com"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="cq/experience-fragments/editor/components/experiencefragment"
+                fragmentPath="/content/experience-fragments/wholesale/us/en/site/footer/master"
+                text="DISH About DISH Careers Investor Relations News Business Owners Accessibility Privacy Policy © 2020, DISH Network L.L.C. All rights reserved. 9D8378AE-4659-471C-BEBB-02B0EB1FECAD"/>
+        </container>
+    </jcr:content>
+</jcr:root>

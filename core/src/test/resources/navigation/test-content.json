@@ -1,0 +1,11 @@
+{
+		"navigation": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "iconpath": "/content/dam/wholesale/icon.jpeg",
+			  "url": "/content/wholesale/us/en/home",
+			  "loginpageurl": "/content/wholesale/us/en/login",
+			  "node": "/content/wholesale/us/en/testnode",
+			  "iconpageurl": "/content/wholesale/us/en/iconpage",
+			  "sling:resourceType": "wholesale/components/content/navigation"
+		}
+	}

@@ -1,0 +1,6 @@
+{
+  "service.ranking": "0",
+  "user.mapping": [
+    "wholesale.core:wholesaleserviceuser=wholesale-service-user"
+  ]
+}

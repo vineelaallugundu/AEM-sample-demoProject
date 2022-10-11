@@ -1,0 +1,29 @@
+<sly 
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-use.banner="com.dish.wholesale.core.models.BannerModel">
+    <div class="main" class="main position-relative bottom-layer">
+        <div>
+            <main role="main" class="position-relative">
+                <div class="home">
+                    <div class="row pt-5 pb-5"></div>
+                    <div class="row pt-5 pb-5">
+                        <div class="col-md-2 col-sm-0"></div>
+                        <div class="col-md-10 col-sm-12">
+                            <div class="pl-4">
+                                <h5 class="font-weight-bold">${banner.bannerOne}</h5>
+                                <h1 class="font-weight-bold mt-3 dish-color-coal">${banner.bannerHeaderOne}</h1>
+                                <p class="mt-3">
+                                    ${banner.bannerTextOne @ context='html'}
+                                </p>
+                                <p class="ml-0 mt-4">
+                                <a class="btn btn-outline-primary" href="${banner.srcOne}.html">${banner.buttonTextOne}</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.bannerOne}"></sly>
+</sly>

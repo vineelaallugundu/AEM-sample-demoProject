@@ -1,0 +1,30 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.model="com.dish.wholesale.core.models.IconCardModel">
+   <section class="iconGrid" class="pad-t_64">
+      <div class="cmp-iconGrid">
+         <nav class="icon-card show-nondesktop">
+            <div class="col pad-b_64">
+               <div data-sly-test=${model.iconCardImage} class="icon-card col-2 offset-1"> 
+                  <img loading="lazy" src="${model.iconCardImage}" alt="${model.iconCardImageAltText}">
+               </div>
+               <div class="icon-card col-3 leftBox-white setpad">
+                  <h4 class="icon-card text-24 pad-b_12 ">${model.iconCardTitle}</h4>
+                  <p class="icon-card description">${model.iconCardDescription}</p>
+               </div>
+            </div>
+         </nav>
+         <nav class="icon-card show-desktop">
+         <div class="row pad-b_64">
+            <div data-sly-test=${model.iconCardImage} class="col-2 offset-1">
+               <img loading="lazy" src="${model.iconCardImage}" alt="${model.iconCardImageAltText}">
+            </div>
+            <div class="icon-card col-3 leftBox-white setpad">
+               <h4 class="icon-card text-24 pad-b_12 ">${model.iconCardTitle}</h4>
+               <p class="icon-card description">${model.iconCardDescription}</p>
+            </div>
+         </div>
+         </nav>
+      </div>
+   </section>
+   <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.iconCardTitle}"></sly>
+</sly>

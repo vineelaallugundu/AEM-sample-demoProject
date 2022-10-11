@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Wholesale Container Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"
+                    fieldLabel="Container Card Details"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <contentCardDetails
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Container Customizations"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        margin="{Boolean}true">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <id
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                            fieldDescription="HTML ID attribute to apply to the component."
+                            fieldLabel="ID"
+                            name="./id"/>
+                            <padding
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Padding for Card"
+                                fieldLabel="Content Padding"
+                                name="./containerPadding">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <zeroRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0rem"
+                                        value="0rem"/>
+                                    <pointOneTwoFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.125rem"
+                                        value="0.125rem"/>
+                                    <pointTwoFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.25rem"
+                                        value="0.25rem"/>
+                                    <pointFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.5rem"
+                                        value="0.5rem"/>
+                                    <oneRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1rem"
+                                        value="1rem"/>
+                                    <twoRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2rem"
+                                        value="2rem"/>
+                                    <fourRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4rem"
+                                        value="4rem"/>
+                                    <eightRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="8rem"
+                                        value="8rem"/>
+                                </items>
+                            </padding>
+                            <margin
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Margin for Card"
+                                fieldLabel="Card Margin"
+                                name="./containerMargin">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <zeroRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0rem"
+                                        value="0rem"/>
+                                    <pointOneTwoFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.125rem"
+                                        value="0.125rem"/>
+                                    <pointTwoFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.25rem"
+                                        value="0.25rem"/>
+                                    <pointFiveRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="0.5rem"
+                                        value="0.5rem"/>
+                                    <oneRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="1rem"
+                                        value="1rem"/>
+                                    <twoRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="2rem"
+                                        value="2rem"/>
+                                    <fourRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="4rem"
+                                        value="4rem"/>
+                                    <eightRem
+                                        jcr:primaryType="nt:unstructured"
+                                        text="8rem"
+                                        value="8rem"/>
+                                </items>
+                            </margin>
+                            <height
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Height for Card"
+                                fieldLabel="Card Height"
+                                name="./containerHeight">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <auto
+										jcr:primaryType="nt:unstructured"
+										text="auto"
+										value="auto"/>
+									<twofiveVH
+										jcr:primaryType="nt:unstructured"
+										text="25vh"
+										value="25vh"/>
+									<fiftyVH
+										jcr:primaryType="nt:unstructured"
+										text="50vh"
+										value="50vh"/>
+									<sevenfiveVH
+										jcr:primaryType="nt:unstructured"
+										text="75vh"
+										value="75vh"/>
+									<hundredVH
+										jcr:primaryType="nt:unstructured"
+										text="100vh"
+										value="100vh"/>
+								</items>
+                            </height>
+                            <radius
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Radius for Card"
+                                fieldLabel="Card Radius"
+                                name="./containerRadius">
+                                <items jcr:primaryType="nt:unstructured">
+									<zeroPx
+										jcr:primaryType="nt:unstructured"
+										text="0rem"
+										value="0rem"/>
+									<tenPx
+										jcr:primaryType="nt:unstructured"
+										text="0.125rem"
+										value="0.125rem"/>
+									<twentyPx
+										jcr:primaryType="nt:unstructured"
+										text="0.25rem"
+										value="0.25rem"/>
+									<thirtyPx
+										jcr:primaryType="nt:unstructured"
+										text="0.4375rem"
+										value="0.4375rem"/>
+									<fortyPx
+										jcr:primaryType="nt:unstructured"
+										text="0.9375rem"
+										value="0.9375rem"/>
+								</items>
+                            </radius>
+                            <dropShadow
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Drop Shadow For Container"
+                                fieldLabel="Drop Shadow"
+                                name="./containerDropShadow">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="--none--"
+                                        value="none"/>
+                                    <low
+                                        jcr:primaryType="nt:unstructured"
+                                        text="low"
+                                        value="0 0.3125rem 0.6525rem 0 rgba(0,0,0,.22)"/>
+                                    <high
+                                        jcr:primaryType="nt:unstructured"
+                                        text="high"
+                                        value="0 1.3125rem 3.25rem -0.6525rem rgba(0,0,0,.16)"/>
+                                </items>
+                            </dropShadow>
+                        </items>
+                    </contentCardDetails>
+                    <dimension
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Content Alignments"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        margin="{Boolean}true">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <verticalAlignment
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                fieldDescription="Specify Alignment for Card"
+                                fieldLabel="Alignment for Content Inside Card"
+                                name="./verticalAlignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                        jcr:primaryType="nt:unstructured"
+                                        text="--none--"
+                                        value="none"/>
+                                    <top
+                                        jcr:primaryType="nt:unstructured"
+                                        text="top"
+                                        value="top"/>
+                                    <center
+                                        jcr:primaryType="nt:unstructured"
+                                        text="center"
+                                        value="center"/>
+                                    <bottom
+                                        jcr:primaryType="nt:unstructured"
+                                        text="bottom"
+                                        value="bottom"/>
+                                </items>
+                            </verticalAlignment>
+                            <horizontalAlignment
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Specify Alignment for Card"
+                                    fieldLabel="Alignment for Content Inside Card"
+                                    name="./horizontalAlignment">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <none
+                                            jcr:primaryType="nt:unstructured"
+                                            text="--none--"
+                                            value="none"/>
+                                    <left
+                                            jcr:primaryType="nt:unstructured"
+                                            text="left"
+                                            value="left"/>
+                                    <center
+                                            jcr:primaryType="nt:unstructured"
+                                            text="center"
+                                            value="center"/>
+                                    <right
+                                            jcr:primaryType="nt:unstructured"
+                                            text="right"
+                                            value="right"/>
+                                </items>
+                            </horizontalAlignment>
+                        </items>
+                    </dimension>
+                    <colorImages
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Color and Images"
+                        sling:resourceType="granite/ui/components/foundation/container"
+                        margin="{Boolean}true">
+                        <layout
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/foundation/layouts/well"/>
+                        <items jcr:primaryType="nt:unstructured">
+                            <bordercolor
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="/libs/granite/ui/components/coral/foundation/form/colorfield"
+                                        fieldLabel="Border Color"
+                                        name="./bordercolor"/>
+                            <bgColorPrimary
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/colorfield"
+                                fieldLabel="Primary Background Color"
+                                name="./containerBgColorPrimary"/>
+                            <bgColorSecondary
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="/libs/granite/ui/components/coral/foundation/form/colorfield"
+                                fieldLabel="Secondary Background Color"
+                                name="./containerBgColorSecondary"/>
+                            <bgGradientDirection
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Select Background Gradient Direction"
+                                    fieldLabel="Background Gradient Direction"
+                                    value="to bottom right"
+                                    defaultValue="to bottom right"
+                                    name="./bgGradientDirection">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <bottom
+                                            jcr:primaryType="nt:unstructured"
+                                            text="bottom"
+                                            value="to bottom"/>
+                                    <top
+                                            jcr:primaryType="nt:unstructured"
+                                            text="top"
+                                            value="to top"/>
+                                    <right
+                                            jcr:primaryType="nt:unstructured"
+                                            text="right"
+                                            value="to right"/>
+                                    <left
+                                            jcr:primaryType="nt:unstructured"
+                                            text="left"
+                                            value="to left"/>
+                                    <bottomRight
+                                            jcr:primaryType="nt:unstructured"
+                                            text="bottom right"
+                                            value="to bottom right"
+                                            selected="true"/>
+                                    <bottomLeft
+                                            jcr:primaryType="nt:unstructured"
+                                            text="bottom left"
+                                            value="to bottom left"/>
+                                    <topRight
+                                            jcr:primaryType="nt:unstructured"
+                                            text="top right"
+                                            value="to top right"/>
+                                    <topLeft
+                                            jcr:primaryType="nt:unstructured"
+                                            text="top left"
+                                            value="to top left"/>
+                                </items>
+                            </bgGradientDirection>
+                            <bgImage
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="cq/gui/components/authoring/dialog/fileupload"
+                            	fileNameParameter="./fileName"
+                                fileReferenceParameter="./containerBgImage"
+                                mimeTypes="[image/gif,image/jpeg,image/png,image/tiff,image/svg+xml]"
+                                multiple="{Boolean}false"
+                                name="./file"
+                                fieldLabel="Background Image Path"
+                                uploadUrl="${suffix.path}"
+                                useHTML5="{Boolean}true"/>
+                            <bgSize
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Select Background Size"
+                                    fieldLabel="Background Size"
+                                    value="cover"
+                                    defaultValue="cover"
+                                    name="./bgSize">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <auto
+                                            jcr:primaryType="nt:unstructured"
+                                            text="auto"
+                                            value="auto"/>
+                                    <cover
+                                            jcr:primaryType="nt:unstructured"
+                                            text="cover"
+                                            value="cover"
+                                            selected="true"/>
+                                    <contain
+                                            jcr:primaryType="nt:unstructured"
+                                            text="contain"
+                                            value="contain"/>
+                                </items>
+                            </bgSize>
+                            <bgPosition
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                    fieldDescription="Select Background Position"
+                                    fieldLabel="Background Position"
+                                    value="center"
+                                    defaultValue="center"
+                                    name="./bgPosition">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <center
+                                            jcr:primaryType="nt:unstructured"
+                                            text="center"
+                                            value="center"
+                                            selected="true"/>
+                                    <left
+                                            jcr:primaryType="nt:unstructured"
+                                            text="left"
+                                            value="left"/>
+                                    <right
+                                            jcr:primaryType="nt:unstructured"
+                                            text="right"
+                                            value="right"/>
+                                    <top
+                                            jcr:primaryType="nt:unstructured"
+                                            text="top"
+                                            value="top"/>
+                                    <bottom
+                                            jcr:primaryType="nt:unstructured"
+                                            text="bottom"
+                                            value="bottom"/>
+                                </items>
+                            </bgPosition>
+                        </items>
+                    </colorImages>
+                </items>
+            </tabs>
+        </items>
+    </content>
+</jcr:root>

@@ -1,0 +1,114 @@
+.accordion {
+	background-color: #f5f5f6;
+	width: 100%;
+	position: relative;
+	padding: 0;
+	border-radius: 7px;
+	transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+	margin: 0 0 8px;
+	.title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-radius: inherit;
+		padding: 0 16px;
+		cursor: pointer;
+		.text {
+			flex-grow: 2;
+			font-size: 16px;
+			font-size: 1rem;
+			line-height: 21px;
+			line-height: 1.3125rem;
+			color: #525259;
+			font-weight: 500;
+			padding: 14px 16px 13px 0;
+			-webkit-text-fill-color: #525259;
+			-webkit-text-stroke: thin;
+		}
+		.icon {
+			box-sizing: border-box;
+			flex-shrink: 0;
+			width: 22px;
+			height: 22px;
+			border-radius: 11px;
+			border: 2px solid #525259;
+			background-color: #ffffff;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			transition: all 0.2s cubic-bezier(0, 0.48, 0.19, 1.01);
+			.shape-1 {
+				transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+				position: absolute;
+				background-color: #525259;
+				border-radius: .75px;
+				height: 2px;
+				width: 12px;
+				transform: rotateZ(90deg);
+			}
+			.shape-2 {
+				transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+				position: absolute;
+				background-color: #525259;
+				border-radius: .75px;
+				height: 2px;
+				width: 12px;
+			}
+		}
+	}
+	.expanded-content {
+		font-size: 16px;
+		font-size: 1rem;
+		line-height: 21px;
+		line-height: 1.3125rem;
+		color: #525259;
+		padding: 0 16px;
+		overflow: hidden;
+		height: 0;
+		transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+		opacity: 0;
+	}
+	&:hover {
+		.title {
+			background-color: #EBEBED;
+			.text {
+				color: #292938;
+			}
+			.icon {
+				border-color: #292938;
+				.shape-1 {
+					background-color: #292938;
+				}
+				.shape-2 {
+					background-color: #292938;
+				}
+			}
+		}
+	}
+}
+.accordion.open {
+	overflow: visible;
+	.title {
+		background-color: #EBEBED;
+		.icon {
+			.shape-1 {
+				transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+				transform: rotateZ(360deg);
+			}
+			.shape-2 {
+				transition: all 1s cubic-bezier(0, 0.48, 0.19, 1.01);
+				transform: rotateZ(360deg);
+			}
+		}
+	}
+	.expanded-content {
+		opacity: 1;
+		padding: 16px;
+		overflow: visible;
+		height: unset;
+	}
+}
+.accordiongroup {
+	margin: 0 auto;
+}

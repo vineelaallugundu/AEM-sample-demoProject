@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="sling:OsgiConfig"
+          getEnvName="prod"
+          getEnvUrl="https://author-dishwholesale-prod.adobecqms.net"
+          getExcludeRunMode="prod"
+          service.ranking="{Long}1"
+          isIncluded="{Boolean}true"
+/>
+

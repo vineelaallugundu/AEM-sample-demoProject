@@ -1,0 +1,11 @@
+{
+	
+		"icon_card": {
+			  "jcr:primaryType": "nt:unstructured",
+			  "iconCardImage": "test",
+			  "iconCardTitle": "Title Text",
+			  "iconCardDescription": "Description Text",
+			  "iconCardImageAltText": "Alt Text",
+			  "sling:resourceType": "wholesale/components/content/icon-card"
+		}
+	}

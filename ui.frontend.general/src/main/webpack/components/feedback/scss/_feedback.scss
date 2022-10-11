@@ -1,0 +1,90 @@
+hr.divider {
+	width: 100%;
+	border: none;
+	background-color: var(--color-marshmallow);
+}
+div.wrapper {
+	width: 100%;
+	max-width: 1450px;
+	margin: auto;
+	background-color: #000;
+}
+.feedback {
+	.feedback-text {
+		width: 50%;
+		height: 100px;
+		color: #fff;
+		margin: auto;
+		span {
+			color: #fff;
+			position: relative;
+			top: 15px;
+			margin: 30px;
+		}
+	}
+	.feedback-btn {
+		color: #fff !important;
+		border-color: #fff;
+		margin-top: 25px;
+	}
+	.text-area {
+		width: 100%;
+		background-color: #272727;
+		border: none;
+		border-bottom-style: inset;
+		color: #fff;
+		line-height: 2.3;
+	}
+	.btn-default {
+		border-color: #fff;
+		color: #fff;
+		font-weight: 600;
+	}
+}
+#feedbackBlock {
+	display: none;
+}
+.feedback-block {
+	width: 100%;
+	height: 250px;
+}
+.submit-view {
+	width: 60%;
+	height: 115px;
+	background-color: #272727;
+	margin: auto;
+	padding: 5px;
+	position: relative;
+	top: 20px;
+	span {
+		color: #fff;
+	}
+}
+::placeholder {
+	color: #fff;
+}
+.text-area {
+	&:focus {
+		outline: none;
+	}
+}
+.submit-btn {
+	position: relative;
+	top: 40px;
+	width: 0px;
+	left: 100px;
+	margin: 0 auto;
+}
+@media (max-width: 992px) {
+	.feedback {
+		.feedback-text {
+			width: 100%;
+		}
+		.feedback-btn {
+			margin: 23px 100px;
+		}
+	}
+	.submit-view {
+		width: 90%;
+	}
+}

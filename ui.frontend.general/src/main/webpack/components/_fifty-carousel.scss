@@ -1,0 +1,60 @@
+.light-theme-marshmallow.wholesale-fifty-carousel {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-marshmallow),
+                    var(--color-marshmallow) 10px,
+                    var(--color-ash) 10px,
+                    var(--color-ash) 20px
+                );
+            }
+        }
+    }
+}
+.light-theme-smoke.wholesale-fifty-carousel {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-smoke),
+                    var(--color-smoke) 10px,
+                    var(--color-ash) 10px,
+                    var(--color-ash) 20px
+                );
+            }
+        }
+    }
+}
+.dark-theme-coal.wholesale-fifty-carousel {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-coal),
+                    var(--color-coal) 10px,
+                    var(--color-charcoal) 10px,
+                    var(--color-charcoal) 20px
+                );
+            }
+        }
+    }
+}
+.dark-theme-midnight.wholesale-fifty-carousel {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-midnight),
+                    var(--color-midnight) 10px,
+                    var(--color-charcoal) 10px,
+                    var(--color-charcoal) 20px
+                );
+            }
+        }
+    }
+}

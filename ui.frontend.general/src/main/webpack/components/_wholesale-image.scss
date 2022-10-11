@@ -1,0 +1,19 @@
+.left {
+	display: block;
+	margin-left: 0;
+	margin-right: auto;
+}
+.right {
+	display: block;
+	margin-left: auto;
+	margin-right: 0;
+}
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cmp-image img {
+	max-width: 100%;
+}

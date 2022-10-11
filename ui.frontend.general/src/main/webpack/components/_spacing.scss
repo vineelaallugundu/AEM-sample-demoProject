@@ -1,0 +1,115 @@
+@media (min-width: 769px) {
+    .spacer {
+        width: 100%;
+        height: 32px;
+    }
+    div.cmp-spacing_4 {
+        .spacer {
+            width: 100%;
+            height: 4px;
+        }
+    }
+    div.cmp-spacing_8 {
+        .spacer {
+            width: 100%;
+            height: 8px;
+        }
+    }
+    div.cmp-spacing_16 {
+        .spacer {
+            width: 100%;
+            height: 16px;
+        }
+    }
+    div.cmp-spacing_32 {
+        .spacer {
+            width: 100%;
+            height: 32px;
+        }
+    }
+    div.cmp-spacing_64 {
+        .spacer {
+            width: 100%;
+            height: 64px;
+        }
+    }
+    div.cmp-spacing_96 {
+        .spacer {
+            width: 100%;
+            height: 96px;
+        }
+    }
+    .cmp-spacing_128 {
+        .spacer {
+            width: 100%;
+            height: 128px;
+        }
+    }
+    div.cmp-spacing_256 {
+        .spacer {
+            width: 100%;
+            height: 256px;
+        }
+    }
+}
+@media (max-width: 768px) {
+    .spacer {
+        width:100%;
+        height:32px;
+    }
+
+    div.mob-cmp-spacing_4 {
+        .spacer {
+            width:100%;
+            height:4px;
+        }
+    }
+
+    div.mob-cmp-spacing_8 {
+        .spacer {
+            width:100%;
+            height:8px;
+        }
+    }
+
+    div.mob-cmp-spacing_16 {
+        .spacer {
+            width: 100%;
+            height: 16px;
+        }
+    }
+
+    div.mob-cmp-spacing_32 {
+        .spacer {
+            width: 100%;
+            height: 32px;
+        }
+    }
+
+    div.mob-cmp-spacing_64 {
+        .spacer {
+            width: 100%;
+            height: 64px;
+        }
+    }
+
+    div.mob-cmp-spacing_96 {
+        .spacer {
+            width: 100%;
+            height: 96px;
+        }
+    }
+    .mob-cmp-spacing_128 {
+        .spacer {
+            width: 100%;
+            height: 128px;
+        }
+    }
+    div.mob-cmp-spacing_256 {
+        .spacer {
+            width: 100%;
+            height: 256px;
+        }
+    }
+
+}

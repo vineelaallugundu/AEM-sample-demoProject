@@ -1,0 +1,77 @@
+
+.aem {
+    .light-theme-marshmallow {
+        section {
+            
+            background-color: var(--color-marshmallow);
+            color: var(--coal);
+        }
+        .image-background-set .row > div {
+            background-color: transparent;
+        }
+        .card {
+            background-color: var(--color-smoke);
+            h1, h2, h3, h4, h5, h6, p {
+                color: var(--midnight);
+            }
+            &.image-background-set {
+                background-color: inherit;
+            }
+        }
+    }
+    .light-theme-smoke {
+        section {
+            background-color: var(--color-smoke);
+            color: var(--midnight);
+        }
+        .image-background-set .row > div {
+            background-color: transparent;
+        }
+        .card {
+            background-color: var(--color-marshmallow);
+            h1, h2, h3, h4, h5, h6, p {
+                color: var(--coal);
+            }
+            &.image-background-set {
+                background-color: inherit;
+            }
+        }
+    }
+    .dark-theme-coal {
+        section {
+            background-color: var(--coal);
+            color: var(--color-marshmallow);
+        }
+        .image-background-set .row > div {
+            background-color: transparent;
+        }
+        .card {
+            background-color: var(--color-midnight);
+            h1, h2, h3, h4, h5, h6, p {
+                color: var(--color-smoke);
+            }
+            &.image-background-set {
+                background-color: inherit;
+            }
+        }
+    }
+    .dark-theme-midnight {
+        section {
+            background-color: var(--midnight);
+            color: var(--color-smoke);
+        }
+        .image-background-set .row > div {
+            background-color: transparent;
+        }
+        .card {
+            background-color: var(--color-coal);
+            h1, h2, h3, h4, h5, h6, p {
+                color: var(--color-marshmallow);
+            }
+            &.image-background-set {
+                background-color: inherit;
+            }
+        }
+    }
+}
+

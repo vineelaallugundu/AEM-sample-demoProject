@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Template">
+    <jcr:content
+        cq:lastModified="{Date}2021-09-15T22:00:49.000Z"
+        cq:lastModifiedBy="benjamin.friske@dish.com"
+        cq:templateType="/conf/wholesale/settings/wcm/template-types/xf"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Wholesale Wireless - Variation"
+        status="enabled"/>
+</jcr:root>

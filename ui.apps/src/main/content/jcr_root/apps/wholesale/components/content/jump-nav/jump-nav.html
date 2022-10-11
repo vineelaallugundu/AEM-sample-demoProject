@@ -1,0 +1,8 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <div data-sly-test="${resource.hasChildren}" id="navbar" data-sly-use.jumpNav="com.dish.wholesale.core.models.JumpNavModel">
+        <div data-sly-list.nav="${jumpNav.data}">
+            <a href="#${nav.id}">${nav.label}</a>
+       </div>
+    </div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !resource.hasChildren}"></sly>
+</sly>

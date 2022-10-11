@@ -1,0 +1,38 @@
+{
+	"accordion": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/accordion",
+	   "textIsRich":[
+	      "true",
+	      "true",
+	      "true"
+	   ],
+	   "accordionItems":{
+	      "jcr:primaryType":"nt:unstructured",
+	      "item0":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "description":"aaa",
+	         "title":"A"
+	      },
+	      "item1":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "description":"bbb",
+	         "title":"B"
+	      },
+	      "item2":{
+	         "jcr:primaryType":"nt:unstructured",
+	         "description":"ccc",
+	         "title":"C"
+	      }
+	   }
+	},
+	"accordion-empty": {
+	   "jcr:primaryType":"nt:unstructured",
+	   "sling:resourceType":"wholesale/components/content/accordion",
+	   "textIsRich":[
+	      "true",
+	      "true",
+	      "true"
+	   ]
+	}
+}

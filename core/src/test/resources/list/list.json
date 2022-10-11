@@ -1,0 +1,34 @@
+{
+   "list": {
+      "sling:resourceType": "wholesale/components/content/list",
+      "textIsRich": [
+         "true",
+         "true",
+         "true"
+      ],
+      "listItems": {
+         "jcr:primaryType": "nt:unstructured",
+         "item0": {
+            "jcr:primaryType": "nt:unstructured",
+            "listButtonLink": "/tmp",
+            "listButtonText": "yes",
+            "listSubText": "sub",
+            "listTitle": "Invo"
+         }
+      }
+   },
+   "list-null": {
+   },
+   "list-null-items": {
+      "listItems": {
+      }
+   },
+   "list-empty": {
+      "sling:resourceType": "wholesale/components/content/list",
+      "textIsRich": [
+         "true",
+         "true",
+         "true"
+      ]
+   }
+}

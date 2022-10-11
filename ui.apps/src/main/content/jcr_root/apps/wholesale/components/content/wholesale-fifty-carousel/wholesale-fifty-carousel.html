@@ -1,0 +1,18 @@
+<sly data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component" />
+<sly data-sly-test= "${wcmmode.edit}">
+   <h5>50/50 Carousel</h5>
+</sly>
+<div class="fifty-carousel">
+   <div class="rail-system two-column-layout${wcmmode.edit || wcmmode.design ? ' authoring-mode' : ''}${properties.includeCard ? ' card-spacing' : ''}">
+         <div class="row" id="${properties.id != null ? properties.id : component.id}">
+            <div class="col-xs-12 col-md-6 p-5">
+               <sly data-sly-resource="${'par' @ resourceType='/libs/wcm/foundation/components/responsivegrid'}"></sly>
+            </div>
+            <div class="col-xs-12 col-md-6 order-first order-md-0">
+               <div class="fifty-logo-view"><img src="${properties.logoPathReference}" alt="${properties.logoAltText}"/></div>
+               <img loading="lazy" class="fifty-image-view" src="${properties.fileReference}" alt="${properties.imgAltText}"/>
+               <div class="fifty-image-background" style="background-image:url(${properties.fileReference @ context='styleString'});"></div>
+            </div>
+      </div>
+   </div>
+</div>

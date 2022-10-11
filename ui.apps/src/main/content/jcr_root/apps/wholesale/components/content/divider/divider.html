@@ -1,0 +1,13 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.dividerModel="com.dish.wholesale.core.models.DividerModel">
+    <div  class="wrapper">
+        <div class="flex-container">
+            <div class="col-3">
+                <div class="divider">
+                <hr class="divider" style="height:${dividerModel.thickness @ context='styleString'}; margin: ${dividerModel.margin @ context='styleString'};">
+                </div>
+            </div>
+        </div>
+    </div>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !properties.thickness}"></sly>
+</sly>

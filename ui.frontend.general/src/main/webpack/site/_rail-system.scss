@@ -1,0 +1,155 @@
+.rail-system {
+    max-width: 1440px;
+    box-sizing: border-box;
+    margin:0px auto;
+}
+
+.rail-system.full-width-layout {
+    max-width: inherit;
+    box-sizing: border-box;
+    margin: inherit;
+}
+
+
+ /* Author Only Style */
+ /****** BEGIN ********/
+ .one-column-layout.authoring-mode .row > div, .two-column-layout.authoring-mode .row > div, .three-column-layout.authoring-mode .row > div, .four-column-layout.authoring-mode .row > div {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--color-marshmallow),
+        var(--color-marshmallow) 10px,
+        var(--color-smoke) 10px,
+        var(--color-smoke) 20px
+      );
+}
+
+.light-theme-marshmallow {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-transparent-marshmallow),
+                    var(--color-transparent-marshmallow) 10px,
+                    var(--color-transparent-ash) 10px,
+                    var(--color-transparent-ash) 20px
+                );
+            }
+        }
+    }
+}
+.light-theme-smoke {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-transparent-smoke),
+                    var(--color-transparent-smoke) 10px,
+                    var(--color-transparent-ash) 10px,
+                    var(--color-transparent-ash) 20px
+                );
+            }
+        }
+    }
+}
+.dark-theme-coal {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-transparent-coal),
+                    var(--color-transparent-coal) 10px,
+                    var(--color-transparent-charcoal) 10px,
+                    var(--color-transparent-charcoal) 20px
+                );
+            }
+        }
+    }
+}
+.dark-theme-midnight {
+    .authoring-mode {
+        &.rail-system {
+            .row > div {
+                background: repeating-linear-gradient(
+                    45deg,
+                    var(--color-transparent-midnight),
+                    var(--color-transparent-midnight) 10px,
+                    var(--color-transparent-charcoal) 10px,
+                    var(--color-transparent-charcoal) 20px
+                );
+            }
+        }
+    }
+}
+.four-column-layout.authoring-mode .row > div {
+    border:solid 1px var(--color-brand-dish-red);
+}
+.four-column-layout.authoring-mode .row > div:nth-child(2) {
+    border:solid 1px var(--color-brand-sling-cookie-monster);
+}
+.four-column-layout.authoring-mode .row > div:last-child {
+    border:solid 1px var(--color-brand-sling-rock-candy);
+}
+.four-column-layout.card-spacing.authoring-mode  .col-md-6 > div, .four-column-layout.card-spacing.authoring-mode .content-card,.four-column-layout.card-spacing.authoring-mode .content-card > div,.four-column-layout.card-spacing.authoring-mode .content-card > div > div,.four-column-layout.card-spacing.authoring-mode .content-card .card{
+    height:inherit;
+}
+.three-column-layout.authoring-mode .row > div {
+    border:solid 1px var(--color-brand-dish-red);
+}
+.three-column-layout.authoring-mode .row > div:first-child {
+    border:solid 1px var(--color-brand-sling-tangerine);
+}
+.three-column-layout.authoring-mode .row > div:last-child {
+    border:solid 1px var(--color-brand-sling-rock-candy);
+}
+.three-column-layout.card-spacing.authoring-mode  .col-md-4 > div, .three-column-layout.card-spacing.authoring-mode .content-card,.three-column-layout.card-spacing.authoring-mode .content-card > div,.three-column-layout.card-spacing.authoring-mode .content-card > div > div,.three-column-layout.card-spacing.authoring-mode .content-card .card{
+    height:inherit;
+}
+.three-column-layout.card-spacing.authoring-mode  .col-md-4 > div, .three-column-layout.card-spacing.authoring-mode .content-card,.three-column-layout.card-spacing.authoring-mode .content-card > div,.three-column-layout.card-spacing.authoring-mode .content-card > div > div,.three-column-layout.card-spacing.authoring-mode .content-card .card{
+    height:inherit;
+}
+.two-column-layout.authoring-mode .row > div:first-child {
+    border:solid 1px var(--color-brand-sling-tangerine);
+}
+.two-column-layout.authoring-mode .row > div:last-child {
+    border:solid 1px var(--color-brand-sling-cookie-monster);
+}
+.two-column-layout.card-spacing.authoring-mode  .col-md-6 > div, .two-column-layout.card-spacing.authoring-mode .content-card,.two-column-layout.card-spacing.authoring-mode .content-card > div,.two-column-layout.card-spacing.authoring-mode .content-card > div > div,.two-column-layout.card-spacing.authoring-mode .content-card .card{
+    height:inherit;
+}
+.one-column-layout.authoring-mode .row > div {
+    border:solid 1px var(--color-brand-sling-rock-candy);
+}
+ /****** END ********/
+
+
+
+.four-column-layout.card-spacing .col-md-6 > div, .four-column-layout.card-spacing .content-card,.four-column-layout.card-spacing .content-card > div,.four-column-layout.card-spacing .content-card > div > div,.four-column-layout.card-spacing .contentcard .card{
+    height:100%;
+    margin:0px;
+}
+
+.four-column-layout.card-spacing .content-card > div > div {
+    padding:8px;
+}
+
+.three-column-layout.card-spacing .col-md-4 > div, .three-column-layout.card-spacing .content-card,.three-column-layout.card-spacing .content-card > div,.three-column-layout.card-spacing .content-card > div > div,.three-column-layout.card-spacing .contentcard .card{
+    height:100%;
+    margin:0px;
+}
+
+.three-column-layout.card-spacing .content-card > div > div {
+    padding:8px;
+}
+
+.two-column-layout.card-spacing .col-md-6 > div, .two-column-layout.card-spacing .content-card,.two-column-layout.card-spacing .content-card > div,.two-column-layout.card-spacing .content-card > div > div,.two-column-layout.card-spacing .contentcard .card{
+    height:100%;
+    margin:0px;
+}
+
+.two-column-layout.card-spacing .content-card > div > div {
+    padding:8px;
+}
+

@@ -1,0 +1,8 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+	<div data-sly-test.valid="${properties.mobileHeight || properties.tabletHeight || properties.desktopHeight}">
+		<div class="row-wrapper mobile${properties.mobileHeight} tablet${properties.tabletHeight} desktop${properties.desktopHeight}">
+			<div data-sly-unwrap data-sly-resource="${'row-element' @ resourceType='wcm/foundation/components/responsivegrid'}"></div>
+		</div>
+	</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = !valid}"></sly>
+</sly>

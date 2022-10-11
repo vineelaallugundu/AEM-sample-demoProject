@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/wholesale" mode="update"/>
+    <filter root="/conf/global/settings/workflow/models/dam/dynamic-media-encode-video"/>
+    <filter root="/content/cq:tags/wireless-portal/search-tags" mode="merge" />
+    <filter root="/content/wholesale" mode="merge"/>
+    <filter root="/content/dam/wholesale" mode="merge"/>
+    <filter root="/content/experience-fragments/wholesale" mode="merge"/>
+    <filter root="/etc/map.publish"/>
+</workspaceFilter>

@@ -1,0 +1,38 @@
+.image-carousel, .video-carousel {
+	.cmp-carousel__action {
+		background-color: var(--color-smoke);
+		border-radius: 25px;
+		padding: 3px;
+		position: relative;
+		border-width: 0px;
+		box-shadow: 5px 5px 20px var(--cinder);
+		transition: all 1s;
+		z-index:104;
+		outline: 0 !important;
+		&:focus {
+			outline: 0 !important;
+		}
+		svg {
+			fill: var(--cinder);
+		}
+		&:hover {
+			box-shadow: 5px 5px 20px var(--midnight);
+			svg {
+				fill: var(--coal);
+			}
+		}
+	}
+	.cmp-carousel__action--previous {
+		left: 50px;
+		z-index: 1;
+	}
+	.cmp-carousel__action--next {
+		left: -50px;
+	}
+	.cmp-carousel__indicators {
+		margin-top: 10px;
+		>li {
+			cursor: pointer;
+		}
+	}
+}

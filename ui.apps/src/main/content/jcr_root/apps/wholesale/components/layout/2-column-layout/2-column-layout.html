@@ -1,0 +1,31 @@
+<sly data-sly-use.template="core/wcm/components/commons/v1/templates.html"></sly>
+    <div class="rail-system two-column-layout ${wcmmode.edit || wcmmode.design ? ' authoring-mode' : '' @ context='attribute'} ${properties.includeCard ? ' card-spacing' : '' @ context='attribute'}">
+        <div class="row" id="${properties.id}">
+            <div class="col-xs-12 col-md-6 overflow-hidden order-lg-1 ${properties.isStackRightCardOnTop ? 'order-2' : '' @ context='attribute'}">
+                <sly data-sly-resource="${'path1' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+            </div>
+            <div class="col-xs-12 col-md-6 overflow-hidden order-lg-2 ${properties.isStackRightCardOnTop ? 'order-1' : '' @ context='attribute'}">
+                <sly data-sly-resource="${'path2' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+            </div>
+        </div>
+    </div>
+<sly data-sly-call="${template.placeholder @ isEmpty=!resource.hasChildren}"></sly>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

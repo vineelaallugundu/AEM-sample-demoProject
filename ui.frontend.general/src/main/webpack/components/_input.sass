@@ -1,0 +1,353 @@
+// Campfire
+// Required Imports
+//@import campfire-variables
+
+
+// Placeholder Default Stylings
+
+::placeholder, ::-moz-placeholder, ::-ms-input-placeholder, ::-ms-input-placeholder 
+	color: $color-cinder
+
+// General Input Field
+.aem
+	.input-field
+		display: flex
+		//flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+		position: relative
+		border-radius: 7px
+		width: 100%
+		margin: 0 0 16px
+		@include transition (all, $transition-slow)
+		padding: 0 8px 0 16px
+		cursor: pointer
+		box-sizing: border-box
+		font-family: var(--font-primary)
+		// Variants
+		&.day
+			background-color: $color-smoke
+			.text
+				color: $color-cinder
+			&:hover
+				label, .value
+					color: $color-charcoal
+			&.marshmallow
+				background-color: $color-marshmallow
+		&.night
+			background-color: $color-charcoal
+			.text
+				color: $color-ash
+		// Input Field Elements
+		.text
+			display: flex
+			flex-wrap: wrap
+			padding: 14px 0 13px
+			position: relative
+			.value, input, label
+				width: 100%
+			.value
+				@include t-18()
+				font-weight: $font-weight-extrabold
+				color: $color-cinder
+			label
+				pointer-events: none
+				@include t-16 ()
+				line-height: 20px
+				color: $color-cinder
+
+// Text Input
+.aem
+	.input-field
+		&.text-input
+			cursor: text
+			border-bottom: 2px solid $color-ash
+			border-radius: 7px 7px 0 0
+			.text
+				flex-grow: 2
+				padding: 14px 0 11px
+				cursor: Default
+			&:hover
+				border-bottom: 2px solid $color-charcoal
+				.text label
+					color: $color-charcoal
+				::placeholder, ::-moz-placeholder, ::-ms-input-placeholder, ::-ms-input-placeholder
+					color: $color-charcoal
+			&:focus-within
+				.status-bar
+					background-color: $color-water-day
+					width: 100%
+				&:before
+					display: none
+		&.search
+			padding: 0 16px 0 0
+			.text
+				padding: 13px 16px 9px 0
+		.status-bar
+			position: absolute
+			width: 0%
+			height: 2px
+			background-color: $color-water-day
+			bottom: -2px
+			left: 0
+			@include transition (all, $transition-slow)
+		input[type=password]
+			.eye-open
+				background-image: url("../img/icons/eye-open-inactive.svg")
+				&:hover
+					background-image: url("../img/icons/eye-open-hover.svg")
+				&:active
+					background-image: url("../img/icons/eye-open-active.svg")
+			.eye-close
+				background-image: url("../img/icons/eye-close-inactive.svg")
+				&:hover
+					background-image: url("../img/icons/eye-close-hover.svg")
+				&:active
+					background-image: url("../img/icons/eye-close-active.svg")
+		.selection
+			display: none
+		.autofill-container, #autoComplete_list
+			position: absolute
+			overflow: hidden
+			margin: 0
+			right: 0
+			left: 0
+			top: 50px
+			background-color: $color-smoke
+			border-radius: 0 0 7px 7px
+			list-style-type: none
+			@include transition (all, $transition-slow)
+			box-sizing: border-box
+			height: inherit
+			padding: 0
+			li
+				position: relative
+				@include transition (all, $transition-slow)
+				@include t-18()
+				padding: 8px 16px
+				color: $color-charcoal
+				text-decoration: none
+				position: relative
+				display: block
+				@include transition (all, $transition-slow)
+				width: 100%
+				&:focus, &:hover
+					color: $color-coal
+					padding-left: 26px
+					outline: none
+					background-color: #EBEBED
+					&:before
+						display: none
+					&:after
+						content: ""
+						position: absolute
+						@include transition (all, $transition-slow)
+						width: 2px
+						left: 16px
+						background-color: $color-ash
+						top: 9px
+						bottom: 10px
+			input, .value
+				color: $color-charcoal
+			label
+				color: $color-charcoal
+		input[type=textarea], input[type=text], input[type=email], input[type=search], input[type=number], input[type=password], input[type=tel]
+			@include t-18 ()
+			font-weight: $font-weight-medium
+			font-family: var(--font-primary)
+			color: $color-coal
+			border: none
+			padding: 0
+			background-color: transparent
+			//Remove Browser Styling
+			&[type="text" i]
+				-webkit-appearance: text
+				box-sizing: border-box
+			&:focus
+				outline: none
+			&:placeholder-shown:invalid
+				~ .status-bar
+					background-color: $color-water-day
+					width: 0%
+				~ .error-message
+					bottom: 0
+					opacity: 0
+			&:invalid
+				color: $color-coal
+				~ .status-bar
+					background-color: $color-error-day
+					right: 0
+			&:invalid:focus
+				~ .status-bar
+					background-color: $color-water-day
+				~ .error-message
+					bottom: 0
+					opacity: 0
+			&:valid
+				~ .status-bar
+					background-color: $color-coal
+					right: 0
+				~ .error-message
+					bottom: 0
+					opacity: 0
+			&:valid:focus
+				color: $color-coal
+				~ label
+					color: $color-cinder
+				~ .status-bar
+					background-color: $color-water-day
+				~ .error-message
+					bottom: 0
+					opacity: 0
+			&:placeholder-shown:focus
+				~ .status-bar
+					background-color: $color-water-day
+					right: 0
+				~ .error-message
+					bottom: 0
+					opacity: 0
+		&.search
+			.icon
+				width: 20px
+				height: 20px
+				padding: 14px 12px 12px 16px
+				background-image: url("../img/icons/search-cinder.svg")
+			&:placeholder-shown
+				~ .autofill-container
+					height: 0
+					@include transition (all, $transition-slow)
+					li
+						padding: 0 16px
+			&:hover:placeholder-shown
+				.icon
+					background-image: url("../img/icons/search-coal.svg")
+			&:focus:placeholder-shown
+				~ .autofill-container
+					height: 0
+					@include transition (all, $transition-slow)
+					li
+						padding: 0 16px
+				.icon
+					background-image: url("../img/icons/search-coal.svg")
+			&:focus, &:hover:not(placeholder-shown)
+				.icon
+					background-image: url("../img/icons/search-coal.svg")
+			&:focus:not(placeholder-shown)
+				.icon
+					background-image: url("../img/icons/search-coal.svg")
+					&:hover
+						background-image: url("../img/icons/search-coal.svg")
+		&.night
+			&.text-field
+				border-bottom: 2px solid $color-cinder
+				&:hover
+					border-bottom: 2px solid $color-ash
+			&.search-field
+				padding: 13px 16px 9px
+			.status-bar
+				background-color: $color-water-night
+			.eye-open
+				background-image: url("../img/icons/eye-open-inactive.svg")
+				&:hover
+					background-image: url("../img/icons/eye-open-hover.svg")
+				&:active
+					background-image: url("../img/icons/eye-open-active.svg")
+			.eye-close
+				background-image: url("../img/icons/eye-close-inactive.svg")
+				&:hover
+					background-image: url("../img/icons/eye-close-hover.svg")
+				&:active
+					background-image: url("../img/icons/eye-close-active.svg")
+			.autofill-container
+				background-color: inherit
+				li
+					a
+						color: $color-ash
+						&:focus, &:hover
+							color: $color-marshmallow
+							&:after
+								background-color: $color-ash
+					&:focus-within, &:hover
+						background-color: #777786
+				input, .value
+					color: $color-smoke
+				label
+					color: $color-smoke
+			input[type=textarea], input[type=text], input[type=email], input[type=search], input[type=number], input[type=password]
+				color: $color-marshmallow
+				//Remove Browser Styling
+				&[type="text" i]
+					-webkit-appearance: text
+					box-sizing: border-box
+				&:focus
+					outline: none
+				&:placeholder-shown:invalid
+					~ .status-bar
+						background-color: $color-water-night
+						width: 0%
+					~ .error-message
+						bottom: 0
+						opacity: 0
+				&:invalid
+					color: $color-marshmallow
+					~ .status-bar
+						background-color: $color-error-night
+						//width: calc(100% + 2px)
+						right: -1px
+				&:invalid:focus
+					~ .status-bar
+						background-color: $color-water-night
+					~ .error-message
+						bottom: 0
+						opacity: 0
+				&:valid
+					~ .status-bar
+						background-color: $color-smoke
+						//width: calc(100% + 2px)
+						right: -1px
+					~ .error-message
+						bottom: 0
+						opacity: 0
+				&:valid:focus
+					color: $color-marshmallow
+					~ label
+						color: $color-ash
+					~ .status-bar
+						background-color: $color-water-night
+					~ .error-message
+						bottom: 0
+						opacity: 0
+				&:placeholder-shown:focus
+					~ .status-bar
+						background-color: $color-water-night
+						//width: calc(100% + 2px)
+						right: -1px
+					~ .error-message
+						bottom: 0
+						opacity: 0
+			input[type=search]
+				.icon-container
+					background-image: url("../img/icons/search-ash.svg")
+				&:hover:placeholder-shown
+					.icon-container
+						background-image: url("../img/icons/search-marshmallow.svg")
+				&:focus:placeholder-shown
+					.icon-container
+						background-image: url("../img/icons/Search-marshmallow.svg")
+		&.condensed
+			input[type=textarea], input[type=text], input[type=email], input[type=search], input[type=number], input[type=password]
+				position: absolute
+				top: 0
+				right: 0
+				left: 0
+				bottom: 0
+				&:placeholder-shown:focus, &:valid:focus, &:invalid:focus
+					~ label
+						transform: translateY(200px)
+				&:placeholder-shown:invalid
+					~ label
+						transform: translateY(200px)
+				&:valid
+					~ label
+						transform: translateY(200px)
+

@@ -1,0 +1,7 @@
+{
+  "sling.servlet.resourceTypes": [
+    "wholesale/components/page"
+  ],
+  "externalizer.domain": "publish",
+  "include.lastmod": "true"
+}

@@ -1,0 +1,30 @@
+{
+  "imageWithPixels": {
+    "fileReference": "/content/dam/nature.jpg",
+    "altText": "Alt Text",
+    "alignment": "left",
+    "imageLink": "#",
+    "widthInPixels": "90",
+    "widthUnit": "pixels"
+  },
+  "imageWithPixelsAndNull": {
+    "widthUnit": "pixels"
+  },
+  "imageWithPercentage": {
+    "fileReference": "/content/dam/nature.jpg",
+    "altText": "Alt Text",
+    "alignment": "left",
+    "imageLink": "#",
+    "widthInPercentage": "90",
+    "widthUnit": "percentage"
+  },
+  "imageWithPercentageAndNull": {
+    "widthUnit": "percentage"
+  },
+  "imageWithNoWidth" : {
+    "fileReference": "/content/dam/nature.jpg",
+    "altText": "Alt Text",
+    "alignment": "left",
+    "imageLink": "#"
+  }
+}

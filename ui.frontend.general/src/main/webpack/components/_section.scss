@@ -1,0 +1,11 @@
+
+
+.aem {
+    .light-theme-marshmallow, .light-theme-smoke, .dark-theme-coal, .dark-theme-midnight {
+        .image-background-set {
+            .row > div, h1, h2, h3, h4, h5, p, .rail-system {
+                background: transparent;
+            }
+        }
+    }
+}

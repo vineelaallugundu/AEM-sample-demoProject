@@ -1,0 +1,226 @@
+/* site wide style */
+@import './campfire-variables';
+@import './fonts';
+@import './colors';
+@import './campfire';
+@import './theming';
+@import './rail-system';
+@import './accessibility';
+
+
+
+/* component style */
+@import '../components/footer';
+@import '../components/section';
+@import '../components/button/scss/_button.scss';
+@import '../components/input';
+@import '../components/super-scale';
+@import '../components/fifty-carousel';
+@import '../components/columns';
+@import '../components/text';
+@import '../components/sales-lead-form/scss/_sales-form-lead';
+@import '../components/jobsearch/scss/_jobsearch.scss';
+@import '../components/header';
+@import '../components/feedback/scss/_feedback.scss';
+@import '../components/list/scss/_list.scss';
+@import '../components/accordion/scss/_accordion.scss';
+@import '../components/billboard';
+@import '../components/breadcrumb';
+@import '../components/container-card';
+@import '../components/contentbanner';
+@import '../components/contentcard';
+@import '../components/divider';
+@import '../components/errormsg';
+@import '../components/hero';
+@import '../components/icon-card';
+@import '../components/jobs';
+@import '../components/jumpnav';
+@import '../components/link';
+@import '../components/spacing';
+@import '../components/tabs';
+@import '../components/wholesale-carousel';
+@import '../components/wholesale-fifty-carousel';
+@import '../components/wholesale-image';
+@import '../components/newsarticle';
+@import '../components/form';
+@import '../components/checkbox';
+@import '../components/search';
+@import '../components/search-result';
+@import '../components/_loader.sass';
+@import '../components/modal/modal';
+@import '../components/video/video';
+@import '../components/card-flip/card-flip';
+
+:root {
+    --box-shadow: 0px 4px 0px 0px;
+    --box-shadow-small: 0px 2px 0px 0px;
+    --box-shadow-hover: 0px 3px 0px 0px;
+    --box-shadow-active: 0px 1px 0px 0px;
+
+    /* Temporary */
+    --ash: #c4c4c7;
+    --cinder: #525259;
+    --charcoal: #292938;
+    --coal: #171725;
+    --midnight: #000010;
+    --soot: #484874;
+    --sediment: #2b2b44;
+    --stoke: #710c19;
+    --blaze: #e41932;
+    --water: #0015ea;
+    --water-day: #384aff;
+    --water-night: #00e7ff;
+    --success-day: #00873f;
+    --success-night: #9de7bf;
+    --alert-day: #eab700;
+    --alert-night: #ffe485;
+    --error-red-day: #931621;
+    --error-red-night: #f4b4b9;
+    --info-day: #46237a;
+    --info-night: #c9b4e9;
+    --error-night: #f4b4b9;
+    --blaze: #e41932;
+    --ember: #9d2235;
+    --ontech-blue: #0015ea;
+    --blue-light: #0092b8;
+    --blue-lighter: #aed9e6;
+    --coral-light: #e8603a;
+    --coral-lighter: #f7d0c4;
+    --blueberry: #001e60;
+    --cookie-monsta: #10069f;
+    --rock-candy: #00a3e0;
+    --mac-and-cheese: #ffa300;
+    --tangerine: #ff6a13;
+}
+
+
+html, body.aem  {
+    max-width: 100%;
+    overflow-x:hidden;
+    
+  }
+
+body.aem  {
+  margin: 0;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-family: proximanova, Gotham, Montserrat, Trebuchet, sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.aem h1, .aem h2, .aem h3, .aem h4, .aem h5, .aem h6, .aem p {
+  margin: 0;
+}
+
+.aem h1 {
+  font-size: 2.75rem;
+  line-height: 3.125rem;
+  letter-spacing: -0.38px;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  .aem h1 {
+    font-size: 3.25rem;
+    line-height: 3.5rem;
+    letter-spacing: -0.45px;
+  }
+}
+
+.aem h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.3px;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  .aem h2 {
+    font-size: 2.75rem;
+    line-height: 3.125rem;
+    letter-spacing: -0.38px;
+  }
+}
+
+.aem h3 {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  letter-spacing: -0.2px;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  .aem h3 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    letter-spacing: -0.3px;
+  }
+}
+
+.aem h4 {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  letter-spacing: -0.2px;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) {
+  .aem h4 {
+    font-size: 2rem;
+    line-height: 2.25rem;
+    letter-spacing: -0.2px;
+  }
+}
+
+.aem h5 {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  letter-spacing: -0.1px;
+  font-weight: 800;
+}
+
+.aem h6 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 800;
+}
+
+.aem p {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
+.aem small {
+  font-size: 0.75rem;
+  line-height: 1.0625rem;
+  font-weight: 500;
+}
+
+.aem strong, .aem b {
+  font-weight: 800;
+}
+
+/* z-index */
+.bottom-layer {
+  z-index: 95;
+}
+
+.middle-layer {
+  z-index: 100;
+}
+
+.top-layer {
+  z-index: 105;
+}
+
+.aem .wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

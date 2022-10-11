@@ -1,0 +1,180 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.carousel="com.dish.wholesale.core.models.VideoCarousel"
+     data-sly-call="${clientlib.css @ categories='wholesale.components.carousel'}">
+</sly>
+<style>
+    .cmp-video-carousel {
+        width: 100%;
+        max-width: calc(100vw - 100px);
+    }
+    .button--right .cmp-carousel__action , .button--left .cmp-carousel__action {
+        left:inherit;
+    }
+    .cmp-video-carousel .container-card {
+        width:100%;
+    }
+    
+    .cmp-video-carousel .container-card > .card {
+        box-shadow:0 1rem 1rem 0 rgba(0,0,0,.22);
+        transition: all 1s;
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+        border-color: rgb(0 0 0 / 8%);
+    }
+    .cmp-video-carousel .card:hover {
+        box-shadow:0 2rem 2rem 0 rgba(0,0,0,.22);
+    }
+    .cmp-video-carousel .video-responsive {
+        box-shadow: none;
+        height: 200px;
+    }
+    .cmp-video-carousel .play-button {
+        display: block;
+        position: absolute;
+        top: 85px;
+        left: 130px;
+        background-color: #0000007a;
+        z-index: 1;
+        padding: 12px 8px 12px 12px;
+        border-radius: 50px;
+        backdrop-filter: blur(5px);
+    }
+    .cmp-video-carousel .play-button .play-button__icon {
+        border: 0;
+        background: transparent;
+        box-sizing: border-box;
+        width: 0;
+        height: 41px;
+        border-color: transparent transparent transparent white;
+        transition: 100ms all ease;
+        cursor: pointer;
+        border-style: solid;
+        border-width: 20px 0 20px 38px;
+        transform: translateX(10px);
+    }
+    .cmp-video-carousel .custom-menu {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        text-align: right;
+        background-color: rgba(0,0,16,.75);
+        cursor: default;
+    }
+    .cmp-video-carousel .carousel-menu .custom-menu button {
+        background: transparent;
+        color: #ffffff;
+        font-weight: bolder;
+        text-shadow: 2px 1px 2px #000;
+        border: none;
+        cursor: pointer;
+    }
+    .cmp-video-carousel .carousel-menu .custom-menu__share-button {
+        height: 40px !important;
+        width: 40px !important;
+        border-radius: 50%;
+        top: 370px !important;
+        left: 860px;
+        z-index: 1;
+    }
+    .cmp-video-carousel .carousel-menu .custom-menu .fa {
+        font-size: 15px;
+    }
+    .cmp-video-carousel .carousel-menu {
+        height: 32px;
+    }
+    .cmp-video-carousel .row .carousel-column {
+        margin-left: inherit!important;
+        margin-right: 10px!important;
+        padding-bottom: 40px; 
+        padding-top: 20px;
+    }
+    @media (max-width: 767.98px) { 
+        .button--right , .button--left {
+            display: none;
+        }
+        .cmp-video-carousel {
+            max-width: inherit;
+        }
+    }
+    
+</style>
+<div class="cmp-carousel cmp-carousel__ ${wcmmode.edit || wcmmode.design ? 'author__page':'' }"
+id="${carousel.id}" data-cmp-is="carousel" data-panelcontainer="${wcmmode.edit && 'carousel'}" data-cmp-autoplay="${(wcmmode.edit || wcmmode.preview) ? '' : carousel.autoplay}" data-cmp-delay="${carousel.delay}" data-cmp-autopause-disabled="${carousel.autopauseDisabled}" data-component-config='{"backgroundType":"${properties.backgroundType}","solidColor":"${properties.color}","backgroundImage":"${properties.backgroundFileReference}"}'>
+    <div  style="display: flex;justify-content: center;align-items: center;align-content: center;">
+        <div class="button--left">
+            <button class="cmp-carousel__action cmp-carousel__action--previous"
+                    type="button"
+                    aria-label="${'Previous' @ i18n}"
+                    data-cmp-hook-carousel="previous">
+                <span class="cmp-carousel__action-icon"></span>
+                <span class="cmp-carousel__action-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#171725">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M15.61 7.41L14.2 6l-6 6 6 6 1.41-1.41L11.03 12l4.58-4.59z"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+        <div class="cmp-video-carousel">
+            <sly data-sly-list.item = "${carousel.carouselDataByPage}">
+                <div 
+                style="flex: 0 0 100%; overflow-x: auto;" 
+                class="cmp-carousel__item${itemList.first ? ' cmp-carousel__item--active' : ''}"
+                role="tabpanel"
+                data-cmp-hook-carousel="item">
+                    <div class="rail-system four-column-layout${wcmmode.edit || wcmmode.design ? ' authoring-mode' : ''}${properties.includeCard ? ' card-spacing' : ''}" style="min-width: 1440px;">
+                        <div class="row">
+                            <sly data-sly-list.carouselItem = "${item.items}">
+                                <div class="col-3 d-flex align-items-stretch carousel-column">
+                                    <div class="container-card">
+                                        <div class="card" onclick="playCarouselVideo(this,event)" title="${carouselItem.title}">
+                                            <div tabindex="0">
+                                                <div class="play-button">
+                                                    <button class="play-button__icon"></button>
+                                                </div>
+                                                <video data-sly-test="${carouselItem.video}" preload="none" class="video-player video-responsive"  poster="${carouselItem.fileReference}" width ="${properties.width || '100%'}" height ="${properties.height || '100%'}"  data-sly-attribute.autoplay="${properties.autoplay}">
+                                                    <source src=${carouselItem.video} type="video/mp4"/>
+                                                </video>
+                                            </div>
+                                            <sly data-sly-test="${carousel.allowShare}">
+                                                <div class="position-relative carousel-menu">
+                                                    <div class="custom-menu">
+                                                        <button class="custom-menu__share-button" data-video-uuid="${carouselItem.video}" onclick="videoCarouselShareToggle(this,event)"><i class="fa fa-solid fa-share"></i></button>
+                                                    </div>
+                                                </div>
+                                            </sly>
+                                            <h5 class="pt-3">${carouselItem.text}</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </sly>
+                        </div>
+                    </div> 
+                </div> 
+            </sly>
+        </div>
+        <div class="button--right">
+            <button class="right-click" class="cmp-carousel__action cmp-carousel__action--next"
+                    type="button"
+                    aria-label="${'Next' @ i18n}"
+                    data-cmp-hook-carousel="next">
+                <span class="cmp-carousel__action-icon"></span>
+                <span class="cmp-carousel__action-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 0 24 24" width="40px" fill="#171725">
+                        <path d="M0 0h24v24H0V0z" fill="none"/>
+                        <path d="M10.02 6L8.61 7.41 13.19 12l-4.58 4.59L10.02 18l6-6-6-6z"/>
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+    <ol role="tablist" class="cmp-carousel__indicators" data-cmp-hook-carousel="indicators">
+        <sly data-sly-list.item = "${carousel.carouselDataByPage}">
+            <li role="tab" class="cmp-carousel__indicator${itemList.first ? ' cmp-carousel__indicator--active' : ''}" data-cmp-hook-carousel="indicator">${item.title}</li>
+        </sly>
+    </ol>
+    <sly data-sly-call="${clientlib.js @ categories='wholesale.components.carousel'}"/>
+    <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/responsivegrid', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"></sly>
+</div>

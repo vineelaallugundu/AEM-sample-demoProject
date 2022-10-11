@@ -1,0 +1,30 @@
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+	 data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component">
+	<div class="contentcard">
+		<div>
+			<div id="${properties.id != null ? properties.id : component.id}" class="card" style="background-color:${properties.bgcolor @ context='styleToken'}; border-color:${properties.bordercolor @ context='styleToken'}; padding:${properties.padding @ context='styleToken'}px;">
+					<sly data-sly-resource="${'par' @ resourceType='/libs/wcm/foundation/components/responsivegrid'}"></sly>
+				</div>
+			</div>
+		</div>
+	<sly data-sly-call="${templates.placeholder @ isEmpty = wcmmode.edit}"></sly>
+</sly>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

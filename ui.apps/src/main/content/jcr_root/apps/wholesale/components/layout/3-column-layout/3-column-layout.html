@@ -1,0 +1,19 @@
+<sly data-sly-test= "${wcmmode.edit}">
+	<h5>3 Column Layout</h5>
+ </sly>
+<div class="rail-system three-column-layout${wcmmode.edit || wcmmode.design ? ' authoring-mode' : ''}${properties.includeCard ? ' card-spacing' : ''}">
+	<div class="row" id="${properties.id}">
+		<div class="col-xs-12 col-md-4 overflow-hidden">
+			<sly data-sly-resource="${'path1' @ resourceType='wcm/foundation/components/responsivegrid'}"></sly>
+		</div>
+		<div class="col-xs-12 col-md-4 overflow-hidden">
+			<sly data-sly-resource="${'path2' @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+		</div>
+		<div class="col-xs-12 col-md-4 overflow-hidden">
+			<sly data-sly-resource="${'path3' @ resourceType='wcm/foundation/components/responsivegrid'}"/>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,55 @@
+.cmp-sales-lead{
+	background-size: cover;
+    background-position: center;
+    background-image: inherit;
+    border-color: var(--marshmallow);
+    box-shadow: 0 1.3125rem 3.25rem -0.6525rem rgb(0 0 0 / 16%);
+    min-height: auto;
+    border-radius: 0.9375rem;
+    padding: 1rem;
+    margin: 1rem;
+
+    form h5 {
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color-ash;
+        opacity: 1; /* Firefox */
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color-ash;
+      }
+      
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color-ash;
+      }
+
+      select {
+        border:none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -ms-appearance: none; /* get rid of default appearance for IE8, 9 and 10*/
+        background-color: transparent;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+      }
+}
+
+.interests {
+	.auxiliary-checkbox:not(:last-child) {
+		padding-right: 2rem;
+	}
+}
+
+.popup-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}

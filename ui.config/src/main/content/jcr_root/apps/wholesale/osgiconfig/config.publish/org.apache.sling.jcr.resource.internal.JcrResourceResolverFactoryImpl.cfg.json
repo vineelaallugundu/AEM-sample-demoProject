@@ -1,0 +1,6 @@
+{
+  "resource.resolver.map.location": "/etc/map.publish",
+  "resource.resolver.mapping": [
+    "/:/"
+  ]
+}

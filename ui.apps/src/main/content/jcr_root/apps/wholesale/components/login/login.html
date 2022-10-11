@@ -1,0 +1,15 @@
+<sly data-sly-use.login="com.dish.wholesale.core.models.LoginModel"
+     data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+     data-sly-use.component="com.adobe.cq.wcm.core.components.models.Component"
+     id="${component.id}">
+
+    <div id="loginform" class="card p-5 mt-5">
+        <div><label class="w-100">${login.username} <input id="forminput" class="form-control w-100" type="text" /></label></div>
+        <div><label class="w-100">${login.password} <input id="forminput" class="form-control w-100" type="password"/></label></div>
+        <div class="pl-4"><label><input class="form-check-input" type="checkbox"/> Remember me</label></div>
+        <div class="text-right"><button class="btn btn-primary" onclick="window.location.href = '/content/wholesale/us/en/dashboard.html';">${login.buttontext}</button></div>
+    </div>
+
+    <sly data-sly-call="${templates.placeholder @ isEmpty = !login.username}"/>
+
+</sly>

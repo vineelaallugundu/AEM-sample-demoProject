@@ -1,0 +1,29 @@
+.jump-nav {
+	z-index: 110;
+	background-color: var(--color-smoke);
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	text-align: center;
+}
+#navbar {
+	display: inline-block;
+	a {
+		float: left;
+		display: block;
+		color: black;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		white-space: nowrap;
+		&:hover {
+			background-color: #ddd;
+			color: black;
+		}
+	}
+	a.active {
+		background-color: #04AA6D;
+		color: white;
+	}
+}
